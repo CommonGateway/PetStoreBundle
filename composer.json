@@ -1,5 +1,5 @@
 {
-    "name": "common-gateway/pet-store-plugin",
+    "name": "common-gateway/pet-store-bundle",
     "description": "An example package for creating symfony flex bundles as plugins",
     "license": "EUPL-1.2",
     "minimum-stability" : "dev",
