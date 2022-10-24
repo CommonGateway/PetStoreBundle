@@ -2,7 +2,7 @@
 
 // src/Service/PetStoreService.php
 
-namespace CommonGateway\PetStorePlugin\Service;
+namespace CommonGateway\PetStoreBundle\Service;
 
 class PetStoreService
 {
@@ -14,6 +14,6 @@ class PetStoreService
      */
     public function test(array $data, array $configuration): string
     {
-        return 'Hello. Your PetStorePlugin works';
+        return 'Hello. Your PetStoreBundle works';
     }
 }

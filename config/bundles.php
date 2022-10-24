@@ -1,5 +1,5 @@
 // config/bundles.php
 return [
-    // ...
-    CommonGateway\PetStorePlugin\PetStorePlugin::class => ['all' => true],
+// ...
+CommonGateway\PetStoreBundle\PetStoreBundle::class => ['all' => true],
 ];
