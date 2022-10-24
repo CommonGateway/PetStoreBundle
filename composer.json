@@ -1,0 +1,7 @@
+{
+    "name": "CommonGateway/PetStorePlugin",
+    "description": "An example package for creating symfony flex bundles as plugins",
+    "require": {
+        "php": ">=7.4"
+    }
+}
