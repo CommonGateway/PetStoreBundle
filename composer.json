@@ -2,6 +2,7 @@
     "name": "common-gateway/pet-store-plugin",
     "description": "An example package for creating symfony flex bundles as plugins",
     "license": "EUPL-1.2",
+    "minimum-stability" : "dev",
     "require": {
         "php": ">=7.4"
     },
