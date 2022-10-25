@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ActionHandler;
+namespace CommonGateway\PetStoreBundle\ActionHandler;
 
 use CommonGateway\PetStoreBundle\Service\PetStoreService;
 
