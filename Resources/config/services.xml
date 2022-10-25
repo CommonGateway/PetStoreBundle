@@ -6,5 +6,6 @@
     <services>
         <defaults autowire="true" autoconfigure="true" />
         <service id="CommonGateway\PetStoreBundle\Service\PetStoreService" />
+        <service id="CommonGateway\PetStoreBundle\ActionHandler\PetStoreHandler" />
     </services>
 </container>
