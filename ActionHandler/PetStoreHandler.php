@@ -2,7 +2,7 @@
 
 namespace App\ActionHandler;
 
-use App\Service\PetStoreService;
+use CommonGateway\PetStoreBundle\Service\PetStoreService;
 
 class PetStoreHandler
 {

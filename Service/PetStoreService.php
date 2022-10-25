@@ -10,10 +10,10 @@ class PetStoreService
     /*
      * Returns a welcoming string
      * 
-     * @return string 
+     * @return array 
      */
-    public function test(array $data, array $configuration): string
+    public function test(array $data, array $configuration): array
     {
-        return 'Hello. Your PetStoreBundle works';
+        return ['response' => 'Hello. Your PetStoreBundle works'];
     }
 }

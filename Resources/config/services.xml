@@ -5,11 +5,6 @@
         https://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
         <defaults autowire="true" autoconfigure="true" />
-        <service id="CommonGateway\PetStoreBundle\Service\PetStoreService">
-            <call method="setContainer">
-                <argument type="service" id="Psr\Container\ContainerInterface"/>
-            </call>
-            <argument key="$petstore" type="service" id="php-petstore"/>
-        </service>
+        <service id="CommonGateway\PetStoreBundle\Service\PetStoreService" />
     </services>
 </container>
