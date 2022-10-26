@@ -12,7 +12,7 @@ class PetStoreService
      * 
      * @return array 
      */
-    public function test(array $data, array $configuration): array
+    public function petStoreHandler(array $data, array $configuration): array
     {
         return ['response' => 'Hello. Your PetStoreBundle works'];
     }
