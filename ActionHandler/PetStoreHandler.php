@@ -45,6 +45,6 @@ class PetStoreHandler
      */
     public function run(array $data, array $configuration): array
     {
-        return $this->petStoreService->test($data, $configuration);
+        return $this->petStoreService->petStoreHandler($data, $configuration);
     }
 }
