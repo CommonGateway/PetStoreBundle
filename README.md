@@ -38,7 +38,7 @@ These Entities will be loaded into the database so you can work with your own ob
 
 These schemas are [json schema's](https://json-schema.org/learn/getting-started-step-by-step.html#starting-the-schema).
 
-You can add existing schemas or create your own and add them in /Schema.
+You can add existing schemas or create your own and add them in /Schema. There is also an example as /Schema/example.json.
 
 Make sure your schema's have a `version` property so you can update your schema's!
 
