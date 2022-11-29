@@ -3,6 +3,9 @@ An example repository for creating php symfony flex bundles
 
 
 ### Using this bundle
+
+To execute the following command you will need [Composer](https://getcomposer.org/download/).
+
 U can install this plugin by installing with command:
 `composer require common-gateway/pet-store-plugin:dev-main`
 in the directory where your composer.json lives.
@@ -27,7 +30,21 @@ To create your own symfony bundle. You can copy this repository for a fast start
    - Open PetStoreBundle.php and change the Bundle name and namespace. The namespace should be the same as your package name in composer.json but in CamelCase. So common-gateway/pet-store-bundle becomes CommonGateway/PetStoreBundle
    - Rename the /Service and /ActionHandler accordingly (or delete if not used).
    - Rename the /DependencyInjection/PetStoreExtension.php to your BundleNameExtension.php
-   - Rename the /Resources/config/services.xml service and handler to your new namespace and BundleName  
+   - Rename the /Resources/config/services.yaml namespaces  
+
+##### Adding schemas
+If you use your bundel with the common-gateway, you can add your own schemas that will be loaded as Entities. 
+These Entities will be loaded into the database so you can work with your own objects/data.
+
+These schemas are [json schema's](https://json-schema.org/learn/getting-started-step-by-step.html#starting-the-schema).
+
+You can add existing schemas or create your own and add them in /Schema.
+
+Make sure your schema's have a `version` property so you can update your schema's!
+
+Also make sure they have a unique `$id` so that they can be related to other schema's.
+
+If you have added schema's you can also add objects/data for them, in /Data is an example you can use.
 
 #### Upload to packagist
 
@@ -54,7 +71,7 @@ Before we can use our bundle and code, we must have it online on packagist so we
 
 To use the code in your library we first have to install it with composer.
 
-Note: for docker add `docker-compose exec php` before all comands
+Note: for docker add `docker-compose exec php` before all commands
 
 1. Navigate with a command line to where your composer.json lives in the project you want to use this bundle.
    - Execute `composer require {full package name}:dev-main`
