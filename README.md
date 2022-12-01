@@ -48,9 +48,17 @@ These schemas are [json schema's](https://json-schema.org/learn/getting-started-
 
 You can add existing schemas or create your own and add them in /Schema. There is also an example as /Schema/example.json.
 
-Make sure your schema's have a `version` property so you can update your schema's!
-
+Make sure your schema's have a `version` property (required) so you can update your schema's!
 Also make sure they have a unique `$id` so that they can be related to other schema's.
+
+All required properties are: 
+- 'version' can start on '0.1.0'
+- '$schema' (https://json-schema.org/draft/2020-12/schema)
+- '$id' (https://opencatalogi.nl/example.schema.json)
+- 'type' must be 'object'
+- 'properties' muste be schema properties
+
+If you don't have all required properties in your schema the gateway won't install that schema and will claim it is invalid.
 
 If you have added schema's you can also add objects/data for them, in /Data is an example you can use.
 
