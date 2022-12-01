@@ -16,7 +16,7 @@ U can install this plugin by installing with command:
 in the directory where your composer.json lives.
 
 If you also want to install the schemas as entities you can install them with command:
-`php bin/console commongateway:install [common-gateway/open-catalogi-bundle]` or dockerized: `docker-compose exec php bin/console commongateway:install [common-gateway/open-catalogi-bundle]`
+`php bin/console commongateway:install common-gateway/open-catalogi-bundle` or dockerized: `docker-compose exec php bin/console commongateway:install common-gateway/open-catalogi-bundle`
 
 ### Creating your own bundle
 
