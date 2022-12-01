@@ -12,11 +12,11 @@ An example repository for creating php symfony flex bundles
 To execute the following command you will need [Composer](https://getcomposer.org/download/) or a dockerized installation which already haves php and composer.
 
 U can install this plugin by installing with command:
-`composer require common-gateway/open-catalogi-bundle:dev-main` or dockerized: `docker-compose exec php composer require common-gateway/open-catalogi-bundle:dev-main`
+`composer require common-gateway/pet-store-bundle:dev-main` or dockerized: `docker-compose exec php composer require common-gateway/pet-store-bundle:dev-main`
 in the directory where your composer.json lives.
 
 If you also want to install the schemas as entities you can install them with command:
-`php bin/console commongateway:install common-gateway/open-catalogi-bundle` or dockerized: `docker-compose exec php bin/console commongateway:install common-gateway/open-catalogi-bundle`
+`php bin/console commongateway:install common-gateway/pet-store-bundle` or dockerized: `docker-compose exec php bin/console commongateway:install common-gateway/pet-store-bundle`
 
 ### Creating your own bundle
 
