@@ -1,7 +1,7 @@
 <?php
 
-// src/Service/LarpingService.php
-namespace OpenCatalogi\OpenCatalogiBundle\Service;
+// src/Service/InstallationService.php
+namespace CommonGateway\PetStoreBundle\Service;
 
 use App\Entity\DashboardCard;
 use App\Entity\Endpoint;
