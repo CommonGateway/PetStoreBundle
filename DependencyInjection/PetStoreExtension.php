@@ -1,5 +1,6 @@
 <?php
-namespace CommonGateway\PetStore\DependencyInjection;
+
+namespace CommonGateway\PetStoreBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
