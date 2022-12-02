@@ -2,7 +2,6 @@
     "name": "common-gateway/pet-store-bundle",
     "description": "An example package for creating symfony flex bundles as plugins",
     "type" : "symfony-bundle",
-	
 	"keywords" : [
 		"commongateway",
 		"common",
@@ -11,11 +10,12 @@
 		"symfony",
 		"common-gateway-plugin"
 	],
-	"homepage" : "https://commongatway.nl",
+	"homepage" : "https://commongateway.nl",
     "license": "EUPL-1.2",
     "minimum-stability" : "dev",
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.4",
+	"commongateway/corebundle": "dev-master"
     },
 	"require-dev" : {
 		"symfony/dependency-injection" : "~3.4|~4.1|~5.0"
@@ -24,5 +24,10 @@
 		"psr-4" : {
 			"CommonGateway\\PetStoreBundle\\" : ""
 		}
+	},
+	"scripts": {
+		"post-package-install": "bin/console common-gateway/pet-store-bundle",
+		"post-package-update": "bin/console common-gateway/pet-store-bundle",
+		"post-package-uninstall": "bin/console common-gateway/pet-store-bundle"
 	}
 }
