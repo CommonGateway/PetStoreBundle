@@ -57,6 +57,7 @@ class InstallationService implements InstallerInterface
             (isset($this->io) ? $this->io->writeln('Looking for a dashboard card for: ' . $object) : '');
             $entity = $this->entityManager->getRepository('App:Entity')->findOneBy(['reference' => $object]);
             if (
+                $entity &&
                 !$dashboardCard = $this->entityManager->getRepository('App:DashboardCard')->findOneBy(['entityId' => $entity->getId()])
             ) {
                 $dashboardCard = new DashboardCard();
@@ -82,6 +83,7 @@ class InstallationService implements InstallerInterface
             $entity = $this->entityManager->getRepository('App:Entity')->findOneBy(['reference' => $object]);
 
             if (
+                $entity &&
                 count($entity->getEndpoints()) == 0
             ) {
                 $endpoint = new Endpoint($entity);
