@@ -5,7 +5,7 @@ namespace CommonGateway\PetStoreBundle\ActionHandler;
 use CommonGateway\PetStoreBundle\Service\PetStoreService;
 
 /**
- * An example handler for the per store
+ * An example handler for the per store.
  */
 class PetStoreHandler
 {
@@ -56,5 +56,4 @@ class PetStoreHandler
     {
         return $this->petStoreService->petStoreHandler($data, $configuration);
     }//end run()
-
 }//end class
