@@ -1,13 +1,11 @@
 <?php
 
 // src/Service/InstallationService.php
+
 namespace CommonGateway\PetStoreBundle\Service;
 
-use App\Entity\DashboardCard;
-use App\Entity\Endpoint;
 use CommonGateway\CoreBundle\Installer\InstallerInterface;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Console\Style\SymfonyStyle;
 
 class InstallationService implements InstallerInterface
 {
