@@ -4,19 +4,28 @@ namespace CommonGateway\PetStoreBundle\ActionHandler;
 
 use CommonGateway\PetStoreBundle\Service\PetStoreService;
 
+/**
+ * An example handler for the per store
+ */
 class PetStoreHandler
 {
+    /**
+     * @var PetStoreService
+     */
     private PetStoreService $petStoreService;
 
+    /**
+     * @param PetStoreService $petStoreService
+     */
     public function __construct(PetStoreService $petStoreService)
     {
         $this->petStoreService = $petStoreService;
-    }
+    }//end __construct()
 
     /**
      *  This function returns the requered configuration as a [json-schema](https://json-schema.org/) array.
      *
-     * @throws array a [json-schema](https://json-schema.org/) that this  action should comply to
+     * @return array a [json-schema](https://json-schema.org/) that this  action should comply to
      */
     public function getConfiguration(): array
     {
@@ -28,7 +37,7 @@ class PetStoreHandler
             'required'    => [],
             'properties'  => [],
         ];
-    }
+    }//end getConfiguration()
 
     /**
      * This function runs the service.
@@ -46,5 +55,6 @@ class PetStoreHandler
     public function run(array $data, array $configuration): array
     {
         return $this->petStoreService->petStoreHandler($data, $configuration);
-    }
-}
+    }//end run()
+
+}//end class
