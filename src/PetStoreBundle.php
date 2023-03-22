@@ -1,12 +1,15 @@
 <?php
+/**
+ * The pet store bundle aims at providing an example symfony bundle for use with the common gateway
+ *
+ * @author  Conduction.nl
+ * @license EUPL-1.2
+ */
 
 namespace CommonGateway\PetStoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-/**
- * Defining the core class.
- */
 class PetStoreBundle extends Bundle
 {
 
