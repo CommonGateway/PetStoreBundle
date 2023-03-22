@@ -48,7 +48,7 @@ class PetStoreHandler
     /**
      * This function runs the service.
      *
-     * @SuppressWarnings Handlers ara strict implementations and therefore dont require code cleanup
+     * @SuppressWarnings("unused") Handlers ara strict implementations and therefore don't require code cleanup
      *
      * @param array $data          The data from the call
      * @param array $configuration The configuration of the action
