@@ -6,7 +6,7 @@ use CommonGateway\CoreBundle\Installer\InstallerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
- * THe installation service
+ * The installation service
  */
 class InstallationService implements InstallerInterface
 {
