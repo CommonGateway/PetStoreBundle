@@ -34,12 +34,12 @@ class PetStoreHandler
     public function getConfiguration(): array
     {
         return [
-                '$id'         => 'https://example.com/person.schema.json',
-                '$schema'     => 'https://json-schema.org/draft/2020-12/schema',
-                'title'       => 'PetStore Action',
-                'description' => 'This handler returns a welcoming string',
-                'required'    => [],
-                'properties'  => [],
+            '$id'         => 'https://example.com/person.schema.json',
+            '$schema'     => 'https://json-schema.org/draft/2020-12/schema',
+            'title'       => 'PetStore Action',
+            'description' => 'This handler returns a welcoming string',
+            'required'    => [],
+            'properties'  => [],
         ];
 
     }//end getConfiguration()
