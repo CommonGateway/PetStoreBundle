@@ -7,6 +7,8 @@ namespace CommonGateway\PetStoreBundle\Service;
  */
 class PetStoreService
 {
+
+
     /**
      * An example handler that is triggerd by an action.
      *
@@ -18,5 +20,8 @@ class PetStoreService
     public function petStoreHandler(array $data, array $configuration): array
     {
         return ['response' => 'Hello. Your PetStoreBundle works'];
+
     }//end petStoreHandler()
+
+
 }//end class
