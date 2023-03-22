@@ -66,7 +66,8 @@ class InstallationService implements InstallerInterface
      */
     public function uninstall()
     {
-        // Do some cleanup
+        // Do some cleanup.
+
     }//end uninstall()
 
 

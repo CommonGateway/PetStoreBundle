@@ -15,4 +15,3 @@ jobs:
           tools: cs2pr, phpcs
       - name: Run phpcs
         run: phpcs -q --report=checkstyle . | cs2pr
-        continue-on-error: true
