@@ -2,8 +2,8 @@
 /**
  * The pet store bundle aims at providing an example symfony bundle for use with the common gateway
  *
- * @author  Conduction.nl
- * @license EUPL-1.2
+ * @author  Conduction.nl <info@conduction.nl>
+ * @license EUPL-1.2 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
  */
 
 namespace CommonGateway\PetStoreBundle;

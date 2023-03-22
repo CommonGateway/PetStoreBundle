@@ -2,8 +2,8 @@
 /**
  * Every symfony bundle need and extension to load services
  *
- * @author  Conduction.nl
- * @license EUPL-1.2
+ * @author  Conduction.nl <info@conduction.nl>
+ * @license EUPL-1.2 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
  */
 
 namespace CommonGateway\PetStoreBundle\DependencyInjection;
