@@ -27,6 +27,8 @@ class PetStoreExtension extends Extension
      * @param ContainerBuilder $container The container
      *
      * @return void
+     *
+     * @SuppressWarnings("unused") Required by symfony
      */
     public function load(array $configs, ContainerBuilder $container)
     {
