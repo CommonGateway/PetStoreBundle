@@ -52,14 +52,14 @@ This template is for rapid Symfony bundle development and meant as a model to ba
 3.  Name your Bundle (CamelCase). The bundle needs to end with `Bundle` as per Symfony [naming](https://symfony.com/doc/current/bundles/best_practices.html#bundles-naming-conventions) conventions. 
 4.  Press the green button `Create repository from template`
 5.  Update file names and namespace to your fitting :
-   	- Open composer.json, and change the name to your fitting. The first word should be the namespace, and the second the bundle's name. 
+   	  - Open composer.json, and change the name to your fitting. The first word should be the namespace, and the second the bundle's name. 
    	>Note: this is kebab-case. Also read: [naming your package](https://packagist.org/about#naming-your-package)
    	
-    - Check the autoload field to be set accordingly. 
-    - Open PetStoreBundle.php and change the Bundle `name` and `namespace`. The namespace should be the same as your package name in `composer.json` but in CamelCase. So `common-gateway/pet-store-bundle` becomes `CommonGateway/PetStoreBundle`
-    - Rename the `/Service` and `/ActionHandler` accordingly (or delete if not used).
-    - Rename the `/DependencyInjection/PetStoreExtension.php` to your `BundleNameExtension.php`
-    - Rename the `/Resources/config/services.yaml` namespaces  
+      - Check the autoload field to be set accordingly. 
+      - Open PetStoreBundle.php and change the Bundle `name` and `namespace`. The namespace should be the same as your package name in `composer.json` but in CamelCase. So `common-gateway/pet-store-bundle` becomes `CommonGateway/PetStoreBundle`
+      - Rename the `/Service` and `/ActionHandler` accordingly (or delete if not used).
+      - Rename the `/DependencyInjection/PetStoreExtension.php` to your `BundleNameExtension.php`
+      - Rename the `/Resources/config/services.yaml` namespaces  
 
 ### Adding schemas
 You can load [json schemas](https://json-schema.org/learn/getting-started-step-by-step.html#starting-the-schema) as Entities from your [`/Schema`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Schema) folder to use in the Common Gateway and work with objects based on your schemas.
@@ -73,7 +73,7 @@ The following properties are required, and without them, the Gateway won't recog
 
     - `$schema` (https://json-schema.org/draft/2020-12/schema)
     - `$id` (https://opencatalogi.nl/{Your scheme name}.schema.json)
-> nique `$id` to be relatable to other schemas. 
+>Unique `$id` to be relatable to other schemas. 
 
     - `type` must be 'object'
     - `properties` must be schema properties

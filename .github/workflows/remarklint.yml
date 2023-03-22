@@ -1,5 +1,5 @@
 name: remark-lint
-on: [pull_request,push]
+on: [pull_request]
 jobs:
   remark-lint:
     name: runner / remark-lint
