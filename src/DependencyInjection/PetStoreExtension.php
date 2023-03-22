@@ -12,6 +12,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  */
 class PetStoreExtension extends Extension
 {
+
+
     /**
      * The laod function is triggerd by symfony and loads the bundels services files.
      *
@@ -24,5 +26,8 @@ class PetStoreExtension extends Extension
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../Resources/config'));
         $loader->load('services.yaml');
+
     }//end load()
+
+
 }//end class

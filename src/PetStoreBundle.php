@@ -10,6 +10,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 class PetStoreBundle extends Bundle
 {
 
+
     /**
      * Returns the path the bundle is in
      *
@@ -20,5 +21,6 @@ class PetStoreBundle extends Bundle
         return \dirname(__DIR__);
 
     }//end getPath()
+
 
 }//end class
