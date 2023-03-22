@@ -10,10 +10,10 @@ services:
     CommonGateway\PetStoreBundle\:
         resource: '../../'
         exclude:
-            - '../../DependencyInjection/'
-            - '../../Entity/'
-            - '../../Resources/'
-            - '../../PetStoreExtension.php'
+            - '../../src/DependencyInjection/'
+            - '../../src/Entity/'
+            - '../../src/Resources/'
+            - '../../src/PetStoreExtension.php'
             
     # this config only applies to the services created by this file
     _instanceof:
