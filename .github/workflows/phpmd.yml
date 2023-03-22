@@ -14,4 +14,4 @@ jobs:
           php-version: '8.2'
           tools: cs2pr, phpmd
       - name: Run phpmd
-        run: phpmd src xml .phpmd.xml | cs2pr
+        run: phpmd src github .phpmd.xml 
