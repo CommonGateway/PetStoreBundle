@@ -1,13 +1,14 @@
 <?php
+/**
+ * The installation service
+ */
 
 namespace CommonGateway\PetStoreBundle\Service;
 
 use CommonGateway\CoreBundle\Installer\InstallerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
-/**
- * The installation service
- */
+
 class InstallationService implements InstallerInterface
 {
 
@@ -18,6 +19,8 @@ class InstallationService implements InstallerInterface
 
 
     /**
+     * The constructor
+     *
      * @param EntityManagerInterface $entityManager The entity manager
      */
     public function __construct(EntityManagerInterface $entityManager)

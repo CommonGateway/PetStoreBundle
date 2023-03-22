@@ -1,12 +1,12 @@
 <?php
-
+/**
+ * An example handler for the per store.
+ */
 namespace CommonGateway\PetStoreBundle\ActionHandler;
 
 use CommonGateway\PetStoreBundle\Service\PetStoreService;
 
-/**
- * An example handler for the per store.
- */
+
 class PetStoreHandler
 {
 
@@ -17,6 +17,8 @@ class PetStoreHandler
 
 
     /**
+     * The constructor
+     *
      * @param PetStoreService $petStoreService The pet store service
      */
     public function __construct(PetStoreService $petStoreService)
