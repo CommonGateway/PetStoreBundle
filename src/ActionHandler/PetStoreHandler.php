@@ -9,10 +9,12 @@ use CommonGateway\PetStoreBundle\Service\PetStoreService;
  */
 class PetStoreHandler
 {
+
     /**
      * @var PetStoreService
      */
     private PetStoreService $petStoreService;
+
 
     /**
      * @param PetStoreService $petStoreService
@@ -20,7 +22,9 @@ class PetStoreHandler
     public function __construct(PetStoreService $petStoreService)
     {
         $this->petStoreService = $petStoreService;
+
     }//end __construct()
+
 
     /**
      *  This function returns the requered configuration as a [json-schema](https://json-schema.org/) array.
@@ -37,7 +41,9 @@ class PetStoreHandler
             'required'    => [],
             'properties'  => [],
         ];
+
     }//end getConfiguration()
+
 
     /**
      * This function runs the service.
@@ -55,5 +61,8 @@ class PetStoreHandler
     public function run(array $data, array $configuration): array
     {
         return $this->petStoreService->petStoreHandler($data, $configuration);
+
     }//end run()
+
+
 }//end class

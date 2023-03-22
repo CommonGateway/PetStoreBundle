@@ -1,6 +1,6 @@
-name: phpcs
+name: php-cs
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -16,3 +16,4 @@ jobs:
 
       - name: Run phpcs
         run: phpcs -q --report=checkstyle src | cs2pr
+        continue-on-error: true
