@@ -35,9 +35,9 @@ class PetStoreHandler
 
 
     /**
-     * This function returns the requered configuration as a [json-schema](https://json-schema.org/) array.
+     * Returns the requered configuration as a https://json-schema.org array.
      *
-     * @return array a [json-schema](https://json-schema.org/) that this  action should comply to
+     * @return array The configuration that this  action should comply to
      */
     public function getConfiguration(): array
     {
@@ -66,7 +66,7 @@ class PetStoreHandler
      *
      * @return array
      *
-     * @SuppressWarnings("unused") Handlers ara strict implementations and therefore don't require code cleanup
+     * @SuppressWarnings("unused") Handlers ara strict implementations
      */
     public function run(array $data, array $configuration): array
     {
