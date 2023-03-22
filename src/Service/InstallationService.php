@@ -36,6 +36,8 @@ class InstallationService implements InstallerInterface
 
 
     /**
+     * Every installation service should implement an install function
+     *
      * @return void
      */
     public function install()
@@ -46,6 +48,8 @@ class InstallationService implements InstallerInterface
 
 
     /**
+     * Every installation service should implement an update function
+     *
      * @return void
      */
     public function update()
@@ -56,6 +60,8 @@ class InstallationService implements InstallerInterface
 
 
     /**
+     * Every installation service should implement an uninstall function
+     *
      * @return void
      */
     public function uninstall()
@@ -65,6 +71,8 @@ class InstallationService implements InstallerInterface
 
 
     /**
+     * The actual code run on update and installation of this bundle
+     *
      * @return void
      */
     public function checkDataConsistency()

@@ -15,6 +15,8 @@ class PetStoreHandler
 {
 
     /**
+     * The pet store service used by the handler
+     *
      * @var PetStoreService
      */
     private PetStoreService $petStoreService;
@@ -54,8 +56,6 @@ class PetStoreHandler
     /**
      * This function runs the service.
      *
-     * @SuppressWarnings("unused") Handlers ara strict implementations and therefore don't require code cleanup
-     *
      * @param array $data          The data from the call
      * @param array $configuration The configuration of the action
      *
@@ -65,6 +65,8 @@ class PetStoreHandler
      * @throws ComponentException
      *
      * @return array
+     *
+     * @SuppressWarnings("unused") Handlers ara strict implementations and therefore don't require code cleanup
      */
     public function run(array $data, array $configuration): array
     {
