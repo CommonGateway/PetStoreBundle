@@ -48,6 +48,8 @@ class PetStoreHandler
     /**
      * This function runs the service.
      *
+     * @SuppressWarnings("unused") Handlers ara strict implementations and therefore don't require code cleanup
+     *
      * @param array $data          The data from the call
      * @param array $configuration The configuration of the action
      *
@@ -60,7 +62,7 @@ class PetStoreHandler
      */
     public function run(array $data, array $configuration): array
     {
-        return $this->petStoreService->petStoreHandler($data, $configuration);
+        return $this->petStoreService->petStoreHandler();
 
     }//end run()
 
