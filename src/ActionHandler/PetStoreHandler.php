@@ -1,8 +1,8 @@
 <?php
 /**
  * An example handler for the per store.
- * 
- * @author Conduction.nl
+ *
+ * @author  Conduction.nl
  * @license EUPL-1.2
  */
 
