@@ -1,10 +1,15 @@
 <?php
+/**
+ * And axample service for adding bussnes logic to your class.
+ *
+ * @author Conduction.nl
+ * @license EUPL-1.2
+ *
+ */
 
 namespace CommonGateway\PetStoreBundle\Service;
 
-/**
- * And axample service for adding bussnes logic to your class.
- */
+
 class PetStoreService
 {
 

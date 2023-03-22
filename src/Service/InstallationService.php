@@ -1,6 +1,9 @@
 <?php
 /**
  * The installation service
+ *
+ * @author Conduction.nl
+ * @license EUPL-1.2
  */
 
 namespace CommonGateway\PetStoreBundle\Service;
