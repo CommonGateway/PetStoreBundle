@@ -10,10 +10,12 @@ use Doctrine\ORM\EntityManagerInterface;
  */
 class InstallationService implements InstallerInterface
 {
+
     /**
      * @var EntityManagerInterface
      */
     private EntityManagerInterface $entityManager;
+
 
     /**
      * @param EntityManagerInterface $entityManager The entity manager
@@ -21,7 +23,9 @@ class InstallationService implements InstallerInterface
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
+
     }//end __construct()
+
 
     /**
      * @return void
@@ -29,7 +33,9 @@ class InstallationService implements InstallerInterface
     public function install()
     {
         $this->checkDataConsistency();
+
     }//end install()
+
 
     /**
      * @return void
@@ -37,7 +43,9 @@ class InstallationService implements InstallerInterface
     public function update()
     {
         $this->checkDataConsistency();
+
     }//end update()
+
 
     /**
      * @return void
@@ -47,11 +55,15 @@ class InstallationService implements InstallerInterface
         // Do some cleanup
     }//end uninstall()
 
+
     /**
      * @return void
      */
     public function checkDataConsistency()
     {
         $this->entityManager->flush();
-    }//end
+
+    }//end checkDataConsistency()
+
+
 }//end class
