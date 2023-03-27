@@ -8,10 +8,11 @@
 
 namespace CommonGateway\PetStoreBundle\ActionHandler;
 
+use CommonGateway\CoreBundle\ActionHandler\ActionHandlerInterface;
 use CommonGateway\PetStoreBundle\Service\PetStoreService;
 
 
-class PetStoreHandler
+class PetStoreHandler implements ActionHandlerInterface
 {
 
     /**
@@ -35,16 +36,16 @@ class PetStoreHandler
 
 
     /**
-     * Returns the requered configuration as a https://json-schema.org array.
+     * Returns the required configuration as a https://json-schema.org array.
      *
      * @return array The configuration that this  action should comply to
      */
     public function getConfiguration(): array
     {
         return [
-            '$id'         => 'https://example.com/person.schema.json',
-            '$schema'     => 'https://json-schema.org/draft/2020-12/schema',
-            'title'       => 'PetStore Action',
+            '$id'         => 'https://example.com/ActionHandler/PetStoreHandler.ActionHandler.json',
+            '$schema'     => 'https://docs.commongateway.nl/schemas/ActionHandler.schema.json',
+            'title'       => 'PetStore ActionHandler',
             'description' => 'This handler returns a welcoming string',
             'required'    => [],
             'properties'  => [],
@@ -59,18 +60,13 @@ class PetStoreHandler
      * @param array $data          The data from the call
      * @param array $configuration The configuration of the action
      *
-     * @throws GatewayException
-     * @throws CacheException
-     * @throws InvalidArgumentException
-     * @throws ComponentException
-     *
      * @return array
      *
      * @SuppressWarnings("unused") Handlers ara strict implementations
      */
     public function run(array $data, array $configuration): array
     {
-        return $this->petStoreService->petStoreHandler();
+        return $this->petStoreService->petStoreHandler($data, $configuration);
 
     }//end run()
 
