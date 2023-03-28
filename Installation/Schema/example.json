@@ -1,5 +1,5 @@
 {
-  "$id": "https://opencatalogi.nl/example.schema.json",
+  "$id": "https://example.com/example.schema.json",
   "$schema": "https://docs.commongateway.nl/schemas/Entity.schema.json",
   "version": "0.2",
   "title": "Example",
@@ -24,13 +24,13 @@
     "relationExample": {
       "description": "An example of a relation to another Schema",
       "example": "{ \"postalCode\": \"1234AB\", \"notes\": [\"note1\", \"note2\"] }",
-      "$ref": "https://opencatalogi.nl/schema/relationExample.schema.json"
+      "$ref": "https://example.com/schema/relationExample.schema.json"
     },
     "relationExamples": {
       "type": "array",
       "description": "An example of an array of objects",
       "items": {
-        "$ref": "https://opencatalogi.nl/schema/relationExample.schema.json"
+        "$ref": "https://example.com/schema/relationExample.schema.json"
       }
     }
   }

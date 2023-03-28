@@ -78,8 +78,8 @@ The following properties are required, and without them, the Gateway won't recog
 
 > without this property, you can't update schemes
 
-    - `$schema` (https://json-schema.org/draft/2020-12/schema)
-    - `$id` (https://opencatalogi.nl/{Your scheme name}.schema.json)
+    - `$schema` (https://docs.commongateway.nl/schemas/Entity.schema.json)
+    - `$id` (https://example.com/schema/{Your scheme name}.schema.json)
 
 > Unique `$id` to be relatable to other schemas.
 

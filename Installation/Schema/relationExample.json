@@ -1,5 +1,5 @@
 {
-  "$id": "https://opencatalogi.nl/schema/relationExample.schema.json",
+  "$id": "https://example.com/schema/relationExample.schema.json",
   "$schema": "https://docs.commongateway.nl/schemas/Entity.schema.json",
   "version": "0.1",
   "title": "RelationExample",

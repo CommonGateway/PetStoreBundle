@@ -1,3 +1,65 @@
 {
-    "installationService": "CommonGateway\\PetStoreBundle\\Service\\InstallationService"
+    "installationService": "CommonGateway\\PetStoreBundle\\Service\\InstallationService",
+    "collections": [
+        {
+            "reference": "https://example.com/collection/petstore.default.collection.json",
+            "schemaPrefix": "https://example.com/schema"
+        }
+    ],
+    "cards": {
+        "schemas": [
+            "https://example.com/example.schema.json"
+        ],
+        "collections": [
+            "https://example.com/collection/petstore.default.collection.json"
+        ]
+    },
+    "endpoints": {
+        "multipleSchemas": [
+            {
+                "$id": "https://example.com/EntitiesEndpoint/search.endpoint.json",
+                "version": "0.0.1",
+                "name": "Search",
+                "description": "Generic Search Endpoint",
+                "schemas": [
+                    "https://example.com/example.schema.json",
+                    "https://example.com/schema/relationExample.schema.json"
+                ],
+                "path": ["search"],
+                "pathRegex": "^(search)$",
+                "methods": ["GET"]
+            }
+        ],
+        "schemas": [
+            {
+                "reference": "https://example.com/example.schema.json",
+                "description": "An example for the following endpoint: /api/examples. methods: [] stands for 'All methods are allowed'.",
+                "path": "examples",
+                "methods": [],
+                "subSchemaEndpoints": [
+                    {
+                        "reference": "https://example.com/schema/relationExample.schema.json",
+                        "description": "An example for the following endpoint: /api/examples/{example-uuid}/relationexamples",
+                        "path": "relationexamples",
+                        "methods": ["GET", "DELETE"],
+                        "throws": ["petstore.example.relationexamples"]
+                    }
+                ],
+                "subEndpoints": [
+                    {
+                        "description": "An example for the following endpoint: PUT /api/examples/publish.",
+                        "path": "publish",
+                        "methods": ["PUT"],
+                        "throws": ["petstore.example.publish"]
+                    }
+                ]
+            },
+            {
+                "reference": "https://example.com/schema/relationExample.schema.json",
+                "description": "An example for the following endpoint: /api/relationexamples.",
+                "path": "relationexamples",
+                "methods": ["GET", "DELETE"]
+            }
+        ]
+    }
 }
