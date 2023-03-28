@@ -1,22 +1,37 @@
 {
   "$id": "https://opencatalogi.nl/example.schema.json",
   "$schema": "https://docs.commongateway.nl/schemas/Entity.schema.json",
-  "version": "0.1",
+  "version": "0.2",
   "title": "Example",
   "type": "object",
   "properties": {
     "firstName": {
       "type": "string",
-      "description": "The person's first name."
+      "description": "The person's first name.",
+      "example": "John"
     },
     "lastName": {
       "type": "string",
-      "description": "The person's last name."
+      "description": "The person's last name.",
+      "example": "Doe"
     },
     "age": {
-      "description": "Age in years which must be equal to or greater than zero.",
       "type": "integer",
-      "minimum": 0
+      "description": "Age in years which must be equal to or greater than zero.",
+      "example": 25,
+      "minimum": 18
+    },
+    "relationExample": {
+      "description": "An example of a relation to another Schema",
+      "example": "{ \"postalCode\": \"1234AB\", \"notes\": [\"note1\", \"note2\"] }",
+      "$ref": "https://opencatalogi.nl/schema/relationExample.schema.json"
+    },
+    "relationExamples": {
+      "type": "array",
+      "description": "An example of an array of objects",
+      "items": {
+        "$ref": "https://opencatalogi.nl/schema/relationExample.schema.json"
+      }
     }
   }
 }

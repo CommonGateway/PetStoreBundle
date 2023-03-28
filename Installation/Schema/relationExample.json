@@ -1,0 +1,23 @@
+{
+  "$id": "https://opencatalogi.nl/schema/relationExample.schema.json",
+  "$schema": "https://docs.commongateway.nl/schemas/Entity.schema.json",
+  "version": "0.1",
+  "title": "RelationExample",
+  "type": "object",
+  "properties": {
+    "postalCode": {
+      "type": "string",
+      "description": "A dutch PostalCode.",
+      "example": "1234AB",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "notes": {
+      "type": "array",
+      "description": "An example of an array of strings",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
