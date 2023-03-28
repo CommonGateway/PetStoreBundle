@@ -10,20 +10,21 @@
 
 | Name | Description |
 |------|-------------|
-|[petStoreHandler](#petstoreservicepetstorehandler)|An example handler that is triggerd by an action.|
+|[__construct](#petstoreservice__construct)||
+|[petStoreHandler](#petstoreservicepetstorehandler)|An example handler that is triggered by an action.|
 
 
 
 
-### PetStoreService::petStoreHandler  
+### PetStoreService::__construct  
 
 **Description**
 
 ```php
-public petStoreHandler (void)
+ __construct (void)
 ```
 
-An example handler that is triggerd by an action. 
+ 
 
  
 
@@ -33,9 +34,36 @@ An example handler that is triggerd by an action.
 
 **Return Values**
 
+`void`
+
+
+<hr />
+
+
+### PetStoreService::petStoreHandler  
+
+**Description**
+
+```php
+public petStoreHandler (array $data, array $configuration)
+```
+
+An example handler that is triggered by an action. 
+
+ 
+
+**Parameters**
+
+* `(array) $data`
+: The data array  
+* `(array) $configuration`
+: The configuration array  
+
+**Return Values**
+
 `array`
 
-> A handler mus ALWAYS return an array
+> A handler must ALWAYS return an array
 
 
 <hr />
