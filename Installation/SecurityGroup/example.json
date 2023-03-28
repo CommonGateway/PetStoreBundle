@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/securityGroup/example.securityGroup.json",
+  "$schema": "https://docs.commongateway.nl/schemas/SecurityGroup.schema.json",
+  "version": "0.1",
+  "title": "Example SecurityGroup",
+  "anonymous": false,
+  "scopes": [
+    "user",
+    "group.example",
+    "example.GET",
+    "example.POST",
+    "example.PUT",
+    "example.DELETE"
+  ]
+}

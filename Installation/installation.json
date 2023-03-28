@@ -6,6 +6,18 @@
             "schemaPrefix": "https://example.com/schema"
         }
     ],
+    "users": [
+        {
+            "$id": "https://example.com/user/johnDoe.user.json",
+            "version": "0.0.1",
+            "description": "test",
+            "email": "johnDoe@username.com",
+            "locale": "en",
+            "securityGroups": [
+                "https://example.com/securityGroup/example.securityGroup.json"
+            ]
+        }
+    ],
     "cards": {
         "schemas": [
             "https://example.com/example.schema.json"
