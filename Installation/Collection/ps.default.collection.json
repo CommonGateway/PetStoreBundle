@@ -1,6 +1,6 @@
 {
     "title": "PetStore Collection",
-    "$id": "https://example.com/collection/petstore.default.collection.json",
+    "$id": "https://example.com/collection/ps.default.collection.json",
     "$schema": "https://docs.commongateway.nl/schemas/CollectionEntity.schema.json",
     "version": "0.0.1",
     "prefix": "ps",

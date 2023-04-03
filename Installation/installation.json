@@ -3,7 +3,7 @@
     "applications": [
         {
             "title": "Example Front-end Application",
-            "$id": "https://example.com/application/petstore.frontend.application.json",
+            "$id": "https://example.com/application/ps.frontend.application.json",
             "$schema": "https://docs.commongateway.nl/schemas/Application.schema.json",
             "version": "0.0.1",
             "description": "An example Front-end Application. This is not required for the gateway to work, there is a default Application created on init. Applications can be used to allow the given domains to use the gateway. And can be used by plugin services to get a domain of an application.",
@@ -29,7 +29,10 @@
             "https://example.com/example.schema.json"
         ],
         "collections": [
-            "https://example.com/collection/petstore.default.collection.json"
+            "https://example.com/collection/ps.default.collection.json"
+        ],
+        "applications": [
+            "https://example.com/application/ps.frontend.application.json"
         ]
     },
     "actions": {
@@ -37,7 +40,7 @@
             {
                 "reference": "https://hp.nl/action/hp.CreatePaymentAction.action.json",
                 "actionHandler": "CommonGateway\\PetStoreBundle\\ActionHandler\\PetStoreHandler",
-                "listens": ["petstore.default.listens"],
+                "listens": ["ps.default.listens"],
                 "configuration": {
                     "description": "This is an example of how we can create a Action for an ActionHandler.",
                     "note": "Note that creating an Action for an ActionHandler this way can only be done once! If you want to create more actions using the same ActionHandler please use action.json files in the Installation folder.",
@@ -46,11 +49,14 @@
                     "doThat": true
                 }
             }
+        ],
+        "fixConfigRef": [
+            "https://example.com/action/ps.EmailActionExample.action.json"
         ]
     },
     "collections": [
         {
-            "reference": "https://example.com/collection/petstore.default.collection.json",
+            "reference": "https://example.com/collection/ps.default.collection.json",
             "schemaPrefix": "https://example.com/schema"
         }
     ],
@@ -82,7 +88,7 @@
                         "description": "An example for the following endpoint: /api/examples/{example-uuid}/relationexamples",
                         "path": "relationexamples",
                         "methods": ["GET", "DELETE"],
-                        "throws": ["petstore.example.relationexamples"]
+                        "throws": ["ps.example.relationexamples"]
                     }
                 ],
                 "subEndpoints": [
@@ -90,7 +96,7 @@
                         "description": "An example for the following endpoint: PUT /api/examples/publish.",
                         "path": "publish",
                         "methods": ["PUT"],
-                        "throws": ["petstore.example.publish"]
+                        "throws": ["ps.example.publish"]
                     }
                 ]
             },
