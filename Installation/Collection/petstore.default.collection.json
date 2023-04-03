@@ -4,5 +4,6 @@
     "$schema": "https://docs.commongateway.nl/schemas/CollectionEntity.schema.json",
     "version": "0.0.1",
     "prefix": "ps",
-    "plugin": "PetStoreBundle"
+    "plugin": "PetStoreBundle",
+    "description": "An example Collection of the PetstoreBundle, Collections are used to set a prefix for specific Endpoints (with a reference starting with SchemaPrefix), see installation.json"
 }

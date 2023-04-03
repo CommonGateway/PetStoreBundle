@@ -4,16 +4,19 @@
   "version": "0.2",
   "title": "Example",
   "type": "object",
+  "description": "An example Schema object.",
   "properties": {
     "firstName": {
       "type": "string",
       "description": "The person's first name.",
-      "example": "John"
+      "example": "John",
+      "required": true
     },
     "lastName": {
       "type": "string",
       "description": "The person's last name.",
-      "example": "Doe"
+      "example": "Doe",
+      "required": true
     },
     "age": {
       "type": "integer",

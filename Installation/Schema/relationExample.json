@@ -4,6 +4,7 @@
   "version": "0.1",
   "title": "RelationExample",
   "type": "object",
+  "description": "An example Schema object. This Schema is used to show how a relation between Schemas works in the Schema: https://example.com/example.schema.json.",
   "properties": {
     "postalCode": {
       "type": "string",

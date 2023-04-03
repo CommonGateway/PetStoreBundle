@@ -1,16 +1,22 @@
 {
     "installationService": "CommonGateway\\PetStoreBundle\\Service\\InstallationService",
-    "collections": [
+    "applications": [
         {
-            "reference": "https://example.com/collection/petstore.default.collection.json",
-            "schemaPrefix": "https://example.com/schema"
+            "title": "Example Front-end Application",
+            "$id": "https://example.com/application/petstore.frontend.application.json",
+            "$schema": "https://docs.commongateway.nl/schemas/Application.schema.json",
+            "version": "0.0.1",
+            "description": "An example Front-end Application. This is not required for the gateway to work, there is a default Application created on init. Applications can be used to allow the given domains to use the gateway. And can be used by plugin services to get a domain of an application.",
+            "domains": [
+                "frontend.example.com"
+            ]
         }
     ],
     "users": [
         {
             "$id": "https://example.com/user/johnDoe.user.json",
             "version": "0.0.1",
-            "description": "test",
+            "description": "An example User with an example SecurityGroup. It is not allowed to set a User password or change/create Admin Users this way.",
             "email": "johnDoe@username.com",
             "locale": "en",
             "securityGroups": [
@@ -26,13 +32,35 @@
             "https://example.com/collection/petstore.default.collection.json"
         ]
     },
+    "actions": {
+        "handlers": [
+            {
+                "reference": "https://hp.nl/action/hp.CreatePaymentAction.action.json",
+                "actionHandler": "CommonGateway\\PetStoreBundle\\ActionHandler\\PetStoreHandler",
+                "listens": ["petstore.default.listens"],
+                "configuration": {
+                    "description": "This is an example of how we can create a Action for an ActionHandler.",
+                    "note": "Note that creating an Action for an ActionHandler this way can only be done once! If you want to create more actions using the same ActionHandler please use action.json files in the Installation folder.",
+                    "configurationKey": "Some configuration here...",
+                    "doThis": false,
+                    "doThat": true
+                }
+            }
+        ]
+    },
+    "collections": [
+        {
+            "reference": "https://example.com/collection/petstore.default.collection.json",
+            "schemaPrefix": "https://example.com/schema"
+        }
+    ],
     "endpoints": {
         "multipleSchemas": [
             {
                 "$id": "https://example.com/EntitiesEndpoint/search.endpoint.json",
                 "version": "0.0.1",
                 "name": "Search",
-                "description": "Generic Search Endpoint",
+                "description": "Generic Search Endpoint. This is an example of an Endpoint using multiple schemas, this way it is possible to get data of multiple schemas.",
                 "schemas": [
                     "https://example.com/example.schema.json",
                     "https://example.com/schema/relationExample.schema.json"
@@ -45,7 +73,7 @@
         "schemas": [
             {
                 "reference": "https://example.com/example.schema.json",
-                "description": "An example for the following endpoint: /api/examples. methods: [] stands for 'All methods are allowed'.",
+                "description": "An example for the following endpoint: /api/examples. methods: [] stands for 'All methods are allowed'. This endpoint also has 2 sub endpoint examples, a subSchemaEndpoint and a subEndpoint.",
                 "path": "examples",
                 "methods": [],
                 "subSchemaEndpoints": [
@@ -68,7 +96,7 @@
             },
             {
                 "reference": "https://example.com/schema/relationExample.schema.json",
-                "description": "An example for the following endpoint: /api/relationexamples.",
+                "description": "An example for the following endpoint: /api/relationexamples. This is the most common way of creating an Endpoint for a Schema. But in this specific example we only allow the GET and DELETE calls.",
                 "path": "relationexamples",
                 "methods": ["GET", "DELETE"]
             }
