@@ -24,6 +24,10 @@
       "example": 25,
       "minimum": 18
     },
+    "description": {
+      "type": "string",
+      "description": "A description of this Example object"
+    },
     "relationExample": {
       "description": "An example of a relation to another Schema",
       "example": "{ \"postalCode\": \"1234AB\", \"notes\": [\"note1\", \"note2\"] }",

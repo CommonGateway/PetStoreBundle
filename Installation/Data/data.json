@@ -1,0 +1,25 @@
+{
+  "https://example.com/example.schema.json": [
+    {
+      "id": "382fc3a3-f84e-4e7a-bd09-ecf69951d035",
+      "firstName": "John",
+      "lastName": "Doe",
+      "age": 21,
+      "description": "This Data/data.json file contains test data (fixtures) that will ALWAYS be loaded in if the initialize commando is run. Any other test data file will be optional test data that is only loaded when the '-d data' argument is used with the initialize command.",
+      "relationExample": "7c87a16e-3af4-4dd4-b6ee-af1b0c4f6861",
+      "relationExamples": [
+        "7c87a16e-3af4-4dd4-b6ee-af1b0c4f6861"
+      ]
+    }
+  ],
+  "https://example.com/schema/relationExample.schema.json": [
+    {
+      "id": "7c87a16e-3af4-4dd4-b6ee-af1b0c4f6861",
+      "postalCode": "1234AB",
+      "notes": [
+        "This Data/data.json file contains test data (fixtures) that will ALWAYS be loaded in if the initialize commando is run.",
+        "Any other test data file will be optional test data that is only loaded when the '-d data' argument is used with the initialize command."
+      ]
+    }
+  ]
+}
