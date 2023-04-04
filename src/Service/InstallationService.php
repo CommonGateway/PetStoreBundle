@@ -83,6 +83,8 @@ class InstallationService implements InstallerInterface
     public function uninstall()
     {
         $this->logger->debug("PetStoreBundle -> Uninstall()");
+        
+        // Do some cleanup to uninstall correctly...
     }//end uninstall()
 
 
@@ -93,6 +95,9 @@ class InstallationService implements InstallerInterface
      */
     public function checkDataConsistency()
     {
+        // This is the place where you can add or change Installation data from/for this bundle or other required bundles.
+        // Note that in most cases it is recommended to use .json files in the Installation folder instead, if possible.
+        
         $this->entityManager->flush();
 
     }//end checkDataConsistency()
