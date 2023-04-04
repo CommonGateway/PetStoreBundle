@@ -1,19 +1,32 @@
-# CommonGateway\PetStoreBundle\Service\PetStoreService
+# CommonGateway\PetStoreBundle\Service\PetStoreService  
+
+
+
+
+
+
 
 ## Methods
 
 | Name | Description |
 |------|-------------|
-|[\_\_construct](#petstoreservice__construct)||
+|[__construct](#petstoreservice__construct)||
 |[petStoreHandler](#petstoreservicepetstorehandler)|An example handler that is triggered by an action.|
 
-### PetStoreService::\_\_construct
+
+
+
+### PetStoreService::__construct  
 
 **Description**
 
 ```php
  __construct (void)
 ```
+
+ 
+
+ 
 
 **Parameters**
 
@@ -23,9 +36,11 @@
 
 `void`
 
+
 <hr />
 
-### PetStoreService::petStoreHandler
+
+### PetStoreService::petStoreHandler  
 
 **Description**
 
@@ -33,14 +48,16 @@
 public petStoreHandler (array $data, array $configuration)
 ```
 
-An example handler that is triggered by an action.
+An example handler that is triggered by an action. 
+
+ 
 
 **Parameters**
 
-*   `(array) $data`
-    : The data array
-*   `(array) $configuration`
-    : The configuration array
+* `(array) $data`
+: The data array  
+* `(array) $configuration`
+: The configuration array  
 
 **Return Values**
 
@@ -48,4 +65,6 @@ An example handler that is triggered by an action.
 
 > A handler must ALWAYS return an array
 
+
 <hr />
+
