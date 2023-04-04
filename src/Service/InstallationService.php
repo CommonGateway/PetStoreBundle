@@ -10,6 +10,7 @@ namespace CommonGateway\PetStoreBundle\Service;
 
 use CommonGateway\CoreBundle\Installer\InstallerInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use Psr\Log\LoggerInterface;
 
 
 class InstallationService implements InstallerInterface
@@ -21,16 +22,27 @@ class InstallationService implements InstallerInterface
      * @var EntityManagerInterface
      */
     private EntityManagerInterface $entityManager;
+    
+    /**
+     * The installation logger.
+     *
+     * @var LoggerInterface
+     */
+    private LoggerInterface $logger;
 
 
     /**
      * The constructor
      *
-     * @param EntityManagerInterface $entityManager The entity manager
+     * @param EntityManagerInterface $entityManager The entity manager.
+     * @param LoggerInterface $installationLogger The installation logger.
      */
-    public function __construct(EntityManagerInterface $entityManager)
-    {
+    public function __construct(
+        EntityManagerInterface $entityManager,
+        LoggerInterface $installationLogger
+    ) {
         $this->entityManager = $entityManager;
+        $this->logger = $installationLogger;
 
     }//end __construct()
 
@@ -42,6 +54,8 @@ class InstallationService implements InstallerInterface
      */
     public function install()
     {
+        $this->logger->debug("PetStoreBundle -> Install()");
+        
         $this->checkDataConsistency();
 
     }//end install()
@@ -54,6 +68,8 @@ class InstallationService implements InstallerInterface
      */
     public function update()
     {
+        $this->logger->debug("PetStoreBundle -> Update()");
+        
         $this->checkDataConsistency();
 
     }//end update()
@@ -66,7 +82,7 @@ class InstallationService implements InstallerInterface
      */
     public function uninstall()
     {
-
+        $this->logger->debug("PetStoreBundle -> Uninstall()");
     }//end uninstall()
 
 

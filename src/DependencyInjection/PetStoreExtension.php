@@ -14,14 +14,14 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * This class adds depedency injection.
+ * This class adds dependency injection.
  */
 class PetStoreExtension extends Extension
 {
 
 
     /**
-     * The laod function is triggerd by symfony and loads the bundels services files.
+     * The load function is triggered by symfony and loads the bundles services files.
      *
      * @param array            $configs   The configuration
      * @param ContainerBuilder $container The container

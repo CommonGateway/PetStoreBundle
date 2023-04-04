@@ -30,9 +30,11 @@ class PetStoreService
     private EntityManagerInterface $entityManager;
 
     /**
+     * The plugin logger.
+     *
      * @var LoggerInterface
      */
-    private LoggerInterface $pluginLogger;
+    private LoggerInterface $logger;
 
 
     /**
@@ -44,7 +46,7 @@ class PetStoreService
         LoggerInterface $pluginLogger
     ) {
         $this->entityManager = $entityManager;
-        $this->pluginLogger  = $pluginLogger;
+        $this->logger  = $pluginLogger;
         $this->configuration = [];
         $this->data          = [];
 
@@ -64,6 +66,8 @@ class PetStoreService
         $this->data          = $data;
         $this->configuration = $configuration;
 
+        $this->logger->debug("PetStoreService -> petStoreHandler()");
+        
         return ['response' => 'Hello. Your PetStoreBundle works'];
 
     }//end petStoreHandler()

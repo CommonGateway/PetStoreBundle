@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "description": "This is an example Action. This action is triggered when commongateway.object.create event is thrown and the data (object) of the event has entity = https://example.com/example.schema.json. In order for this condition to work the ref https://example.com/example.schema.json has to be translated to an id, see installation.json['actions']['fixConfigRef'] for how to do this.",
   "listens": [
-    "commongateway.object.create"
+    "commongateway.object.pre.create"
   ],
   "conditions":
   {
