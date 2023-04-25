@@ -1,41 +1,53 @@
-# CommonGateway\PetStoreBundle\Service\InstallationService
+# CommonGateway\PetStoreBundle\Service\InstallationService  
+
+
 
 ## Implements:
-
 CommonGateway\CoreBundle\Installer\InstallerInterface
+
+
 
 ## Methods
 
 | Name | Description |
 |------|-------------|
-|[\_\_construct](#installationservice__construct)|The constructor|
+|[__construct](#installationservice__construct)|The constructor|
 |[checkDataConsistency](#installationservicecheckdataconsistency)|The actual code run on update and installation of this bundle|
 |[install](#installationserviceinstall)|Every installation service should implement an install function|
 |[uninstall](#installationserviceuninstall)|Every installation service should implement an uninstall function|
 |[update](#installationserviceupdate)|Every installation service should implement an update function|
 
-### InstallationService::\_\_construct
+
+
+
+### InstallationService::__construct  
 
 **Description**
 
 ```php
-public __construct (\EntityManagerInterface $entityManager)
+public __construct (\EntityManagerInterface $entityManager, \LoggerInterface $installationLogger)
 ```
 
-The constructor
+The constructor 
+
+ 
 
 **Parameters**
 
-*   `(\EntityManagerInterface) $entityManager`
-    : The entity manager
+* `(\EntityManagerInterface) $entityManager`
+: The entity manager.  
+* `(\LoggerInterface) $installationLogger`
+: The installation logger.  
 
 **Return Values**
 
 `void`
 
+
 <hr />
 
-### InstallationService::checkDataConsistency
+
+### InstallationService::checkDataConsistency  
 
 **Description**
 
@@ -43,7 +55,9 @@ The constructor
 public checkDataConsistency (void)
 ```
 
-The actual code run on update and installation of this bundle
+The actual code run on update and installation of this bundle 
+
+ 
 
 **Parameters**
 
@@ -53,9 +67,13 @@ The actual code run on update and installation of this bundle
 
 `void`
 
+
+
+
 <hr />
 
-### InstallationService::install
+
+### InstallationService::install  
 
 **Description**
 
@@ -63,7 +81,9 @@ The actual code run on update and installation of this bundle
 public install (void)
 ```
 
-Every installation service should implement an install function
+Every installation service should implement an install function 
+
+ 
 
 **Parameters**
 
@@ -73,9 +93,13 @@ Every installation service should implement an install function
 
 `void`
 
+
+
+
 <hr />
 
-### InstallationService::uninstall
+
+### InstallationService::uninstall  
 
 **Description**
 
@@ -83,7 +107,9 @@ Every installation service should implement an install function
 public uninstall (void)
 ```
 
-Every installation service should implement an uninstall function
+Every installation service should implement an uninstall function 
+
+ 
 
 **Parameters**
 
@@ -93,9 +119,13 @@ Every installation service should implement an uninstall function
 
 `void`
 
+
+
+
 <hr />
 
-### InstallationService::update
+
+### InstallationService::update  
 
 **Description**
 
@@ -103,7 +133,9 @@ Every installation service should implement an uninstall function
 public update (void)
 ```
 
-Every installation service should implement an update function
+Every installation service should implement an update function 
+
+ 
 
 **Parameters**
 
@@ -113,4 +145,8 @@ Every installation service should implement an update function
 
 `void`
 
+
+
+
 <hr />
+
