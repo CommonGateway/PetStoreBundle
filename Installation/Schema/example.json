@@ -1,5 +1,5 @@
 {
-  "$id": "https://example.com/example.schema.json",
+  "$id": "https://example.com/schema/example.schema.json",
   "$schema": "https://docs.commongateway.nl/schemas/Entity.schema.json",
   "version": "0.2",
   "title": "Example",
@@ -29,16 +29,19 @@
       "description": "A description of this Example object"
     },
     "relationExample": {
-      "description": "An example of a relation to another Schema",
+      "description": "An example of an inversed by relation to another Schema",
       "example": "{ \"postalCode\": \"1234AB\", \"notes\": [\"note1\", \"note2\"] }",
-      "$ref": "https://example.com/schema/relationExample.schema.json"
+      "$ref": "https://example.com/schema/relationExample.schema.json",
+      "inversedBy": "example",
+      "cascade": true
     },
     "relationExamples": {
       "type": "array",
       "description": "An example of an array of objects",
       "items": {
         "$ref": "https://example.com/schema/relationExample.schema.json"
-      }
+      },
+      "cascade": true
     }
   }
 }

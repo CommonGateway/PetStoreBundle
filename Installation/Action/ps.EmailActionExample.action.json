@@ -3,7 +3,7 @@
   "$id": "https://example.com/action/ps.EmailActionExample.action.json",
   "$schema": "https://docs.commongateway.nl/schemas/Action.schema.json",
   "version": "0.0.1",
-  "description": "This is an example Action. This action is triggered when commongateway.object.create event is thrown and the data (object) of the event has entity = https://example.com/example.schema.json. In order for this condition to work the ref https://example.com/example.schema.json has to be translated to an id, see installation.json['actions']['fixConfigRef'] for how to do this.",
+  "description": "This is an example Action. This action is triggered when commongateway.object.create event is thrown and the data (object) of the event has entity = https://example.com/schema/example.schema.json. In order for this condition to work the ref https://example.com/schema/example.schema.json has to be translated to an id, see installation.json['actions']['fixConfigRef'] for how to do this.",
   "listens": [
     "commongateway.object.pre.create"
   ],
@@ -12,7 +12,7 @@
     "==": [
       {
         "var": "entity"
-      }, "https://example.com/example.schema.json"
+      }, "https://example.com/schema/example.schema.json"
     ]
   },
   "class": "App\\ActionHandler\\EmailHandler",

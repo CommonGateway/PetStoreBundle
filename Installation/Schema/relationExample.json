@@ -4,7 +4,7 @@
   "version": "0.1",
   "title": "RelationExample",
   "type": "object",
-  "description": "An example Schema object. This Schema is used to show how a relation between Schemas works in the Schema: https://example.com/example.schema.json.",
+  "description": "An example Schema object. This Schema is used to show how a relation between Schemas works in the Schema: https://example.com/schema/example.schema.json.",
   "properties": {
     "postalCode": {
       "type": "string",
@@ -19,6 +19,13 @@
       "items": {
         "type": "string"
       }
+    },
+    "example": {
+      "description": "An example of an inversed by relation to another Schema",
+      "example": "{ \"firstName\": \"John\", \"lastName\": \"Doe\" }",
+      "$ref": "https://example.com/schema/example.schema.json",
+      "inversedBy": "relationExample",
+      "cascade": true
     }
   }
 }
