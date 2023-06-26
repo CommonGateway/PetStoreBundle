@@ -32,16 +32,14 @@
       "description": "An example of an inversed by relation to another Schema",
       "example": "{ \"postalCode\": \"1234AB\", \"notes\": [\"note1\", \"note2\"] }",
       "$ref": "https://example.com/schema/relationExample.schema.json",
-      "inversedBy": "example",
-      "cascade": true
+      "inversedBy": "example"
     },
     "relationExamples": {
       "type": "array",
       "description": "An example of an array of objects",
       "items": {
         "$ref": "https://example.com/schema/relationExample.schema.json"
-      },
-      "cascade": true
+      }
     }
   }
 }
