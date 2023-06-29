@@ -1,6 +1,6 @@
 # CommonGateway\PetStoreBundle\Service\PetStoreService  
 
-
+An example service for adding business logic to your class.
 
 
 

@@ -1,6 +1,6 @@
 # CommonGateway\PetStoreBundle\Service\InstallationService  
 
-
+The installation service for this plugin.
 
 ## Implements:
 CommonGateway\CoreBundle\Installer\InstallerInterface
