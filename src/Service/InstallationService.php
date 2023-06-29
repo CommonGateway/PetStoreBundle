@@ -1,10 +1,4 @@
 <?php
-/**
- * The installation service
- *
- * @author  Conduction.nl <info@conduction.nl>
- * @license EUPL-1.2 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
- */
 
 namespace CommonGateway\PetStoreBundle\Service;
 
@@ -12,7 +6,15 @@ use CommonGateway\CoreBundle\Installer\InstallerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 
-
+/**
+ * The installation service for this plugin.
+ *
+ * @author  Conduction.nl <info@conduction.nl>
+ *
+ * @license EUPL-1.2 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
+ *
+ * @category Service
+ */
 class InstallationService implements InstallerInterface
 {
 

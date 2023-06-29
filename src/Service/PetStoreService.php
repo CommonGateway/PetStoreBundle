@@ -1,16 +1,19 @@
 <?php
-/**
- * An example service for adding business logic to your class.
- *
- * @author  Conduction.nl <info@conduction.nl>
- * @license EUPL-1.2 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
- */
 
 namespace CommonGateway\PetStoreBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 
+/**
+ * An example service for adding business logic to your class.
+ *
+ * @author  Conduction.nl <info@conduction.nl>
+ *
+ * @license EUPL-1.2 https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12
+ *
+ * @category Service
+ */
 class PetStoreService
 {
 
