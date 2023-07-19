@@ -16,10 +16,21 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.4",
-        "commongateway/corebundle": "^1.0.51"
+        "commongateway/corebundle": "^1.1.35"
     },
     "require-dev": {
         "symfony/dependency-injection": "~3.4|~4.1|~5.0"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true,
+            "endroid/installer": true
+        }
     },
     "autoload": {
         "psr-4": {
