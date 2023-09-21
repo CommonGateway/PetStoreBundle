@@ -1,0 +1,53 @@
+name: Generate PlantUML from JSON Schema
+
+on:
+  push:
+
+jobs:
+  generate-puml:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Create /docs directory if it doesn't exist
+        run: |
+          mkdir -p docs
+
+      - name: Generate PlantUML files
+        run: |
+          for schema in $(find . -name '*.json.schema'); do
+            output_name=docs/$(basename $schema .json.schema).puml
+            python - <<END
+            import json
+
+            def generate_puml(json_schema, puml_file):
+                with open(puml_file, 'w') as f:
+                    f.write("@startuml\n")
+                    for prop, details in json_schema.get("properties", {}).items():
+                        f.write(f"class {prop} {{\n")
+                        for field, field_type in details.get("properties", {}).items():
+                            f.write(f"  + {field}: {field_type.get('type', 'Any')}\n")
+                        f.write("}\n")
+                    f.write("@enduml\n")
+
+            with open("$schema", 'r') as f:
+                json_schema = json.load(f)
+          
+            generate_puml(json_schema, "$output_name")
+            END
+          done
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/*.puml
+          git commit -m "Generate PlantUML files from JSON Schema" || echo "No changes to commit"
+          git push
