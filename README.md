@@ -50,21 +50,21 @@ Basic knowledge of the [Common Gateway](https://github.com/CommonGateway)
 
 This template is for rapid Symfony bundle development and meant as a model to base your custom plugin on. Follow the next steps to create your plugin within 45 minutes or less
 
-1.  Login on [GitHub](https://github.com)
-2.  Use [this template](https://github.com/CommonGateway/PetStoreBundle/generate)
-3.  Name your Bundle (CamelCase). The bundle needs to end with `Bundle` as per Symfony [naming](https://symfony.com/doc/current/bundles/best_practices.html#bundles-naming-conventions) conventions.
-4.  Press the green button `Create repository from template`
-5.  Update file names and namespace to your fitting :
+1. Login on [GitHub](https://github.com)
+2. Use [this template](https://github.com/CommonGateway/PetStoreBundle/generate)
+3. Name your Bundle (CamelCase). The bundle needs to end with `Bundle` as per Symfony [naming](https://symfony.com/doc/current/bundles/best_practices.html#bundles-naming-conventions) conventions.
+4. Press the green button `Create repository from template`
+5. Update file names and namespace to your fitting :
 
-    *   Open composer.json, and change the name to your fitting. The first word should be the namespace, and the second the bundle's name.
+   * Open composer.json, and change the name to your fitting. The first word should be the namespace, and the second the bundle's name.
 
-    > Note: this is kebab-case. Also read: [naming your package](https://packagist.org/about#naming-your-package)
+   > Note: this is kebab-case. Also read: [naming your package](https://packagist.org/about#naming-your-package)
 
-    *   Check the autoload field to be set accordingly.
-    *   Open PetStoreBundle.php and change the Bundle `name` and `namespace`. The namespace should be the same as your package name in `composer.json` but in CamelCase. So `common-gateway/pet-store-bundle` becomes `CommonGateway/PetStoreBundle`
-    *   Rename the `/Service` and `/ActionHandler` accordingly (or delete if not used).
-    *   Rename the `/DependencyInjection/PetStoreExtension.php` to your `BundleNameExtension.php`
-    *   Rename the `/Resources/config/services.yaml` namespaces
+   * Check the autoload field to be set accordingly.
+   * Open PetStoreBundle.php and change the Bundle `name` and `namespace`. The namespace should be the same as your package name in `composer.json` but in CamelCase. So `common-gateway/pet-store-bundle` becomes `CommonGateway/PetStoreBundle`
+   * Rename the `/Service` and `/ActionHandler` accordingly (or delete if not used).
+   * Rename the `/DependencyInjection/PetStoreExtension.php` to your `BundleNameExtension.php`
+   * Rename the `/Resources/config/services.yaml` namespaces
 
 ### Adding schemas
 
@@ -74,16 +74,22 @@ You can add existing schemas or create your own and add them to the`/Schema` fol
 
 The following properties are required, and without them, the Gateway won't recognize the schema as valid:
 
-    - `version` can start on '0.1.0.' 
+```
+- `version` can start on '0.1.0.' 
+```
 
 > without this property, you can't update schemes
 
-    - `$schema` (https://docs.commongateway.nl/schemas/Entity.schema.json)
-    - `$id` (https://example.com/schema/{Your scheme name}.schema.json)
+```
+- `$schema` (https://docs.commongateway.nl/schemas/Entity.schema.json)
+- `$id` (https://example.com/schema/{Your scheme name}.schema.json)
+```
 
 > Unique `$id` to be relatable to other schemas.
 
-    - `type` must be 'object'
-    - `properties` must be schema properties
+```
+- `type` must be 'object'
+- `properties` must be schema properties
+```
 
 Once you add schemas to the repository, you can also add objects/data for those schemas. There is an example shown in the [`/Data`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Data) folder.
