@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Product Github Page
-        uses: OpenCatalogi/productpage-action@0.0.1-main.7.5777d63
+        uses: OpenCatalogi/productpage-action@0.0.1-main.8.e116dcb
