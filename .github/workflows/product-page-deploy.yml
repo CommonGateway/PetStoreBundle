@@ -7,5 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Create or Update publiccode.yaml
+        uses: OpenCatalogi/publiccode-action@v0.0.1-beta            
       - name: Deploy Product Github Page
         uses: OpenCatalogi/productpage-action@0.0.1-main.8.e116dcb
