@@ -37,6 +37,7 @@ nl:
     commonground: []
     gemma: []
 organisation:
+  description: The common gateway
   logo: https://avatars.githubusercontent.com/u/106860777?v=4
   name: CommonGateway
   url: CommonGateway
