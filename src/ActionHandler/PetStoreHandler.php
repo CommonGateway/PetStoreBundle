@@ -6,7 +6,7 @@ use CommonGateway\CoreBundle\ActionHandler\ActionHandlerInterface;
 use CommonGateway\PetStoreBundle\Service\PetStoreService;
 
 /**
- * An example handler for the per store.
+ * An example handler for the pet store.
  *
  * @author Conduction.nl <info@conduction.nl>
  *
