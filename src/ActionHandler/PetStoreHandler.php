@@ -62,7 +62,7 @@ class PetStoreHandler implements ActionHandlerInterface
      *
      * @return array
      *
-     * @SuppressWarnings("unused") Handlers ara strict implementations
+     * @SuppressWarnings("unused") Handlers are strict implementations
      */
     public function run(array $data, array $configuration): array
     {
