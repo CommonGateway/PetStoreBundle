@@ -4,6 +4,7 @@ namespace CommonGateway\PetStoreBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * An example service for adding business logic to your class.
@@ -18,16 +19,22 @@ class PetStoreService
 {
 
     /**
+     * The configuration array.
+     *
      * @var array
      */
     private array $configuration;
 
     /**
+     * The data array.
+     *
      * @var array
      */
     private array $data;
 
     /**
+     * The Entity Manager.
+     *
      * @var EntityManagerInterface
      */
     private EntityManagerInterface $entityManager;
@@ -71,7 +78,10 @@ class PetStoreService
 
         $this->logger->debug("PetStoreService -> petStoreHandler()", ['plugin' => 'common-gateway/pet-store-bundle']);
 
-        return ['response' => 'Hello. Your PetStoreBundle works'];
+        $response = ['Message' => 'Hello. Your PetStoreBundle works'];
+        $data['response'] = new Response(json_encode($response), 200, ['Content-type' => 'application/json']);
+        
+        return $data;
 
     }//end petStoreHandler()
 
