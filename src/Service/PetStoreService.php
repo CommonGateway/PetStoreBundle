@@ -78,9 +78,9 @@ class PetStoreService
 
         $this->logger->debug("PetStoreService -> petStoreHandler()", ['plugin' => 'common-gateway/pet-store-bundle']);
 
-        $response = ['Message' => 'Hello. Your PetStoreBundle works'];
+        $response         = ['Message' => 'Hello. Your PetStoreBundle works'];
         $data['response'] = new Response(json_encode($response), 200, ['Content-type' => 'application/json']);
-        
+
         return $data;
 
     }//end petStoreHandler()
