@@ -56,7 +56,7 @@ class InstallationService implements InstallerInterface
      */
     public function install()
     {
-        $this->logger->debug("PetStoreBundle -> Install()");
+        $this->logger->debug("PetStoreBundle -> Install()", ['plugin' => 'common-gateway/pet-store-bundle']);
 
         $this->checkDataConsistency();
 
@@ -70,7 +70,7 @@ class InstallationService implements InstallerInterface
      */
     public function update()
     {
-        $this->logger->debug("PetStoreBundle -> Update()");
+        $this->logger->debug("PetStoreBundle -> Update()", ['plugin' => 'common-gateway/pet-store-bundle']);
 
         $this->checkDataConsistency();
 
@@ -84,7 +84,7 @@ class InstallationService implements InstallerInterface
      */
     public function uninstall()
     {
-        $this->logger->debug("PetStoreBundle -> Uninstall()");
+        $this->logger->debug("PetStoreBundle -> Uninstall()", ['plugin' => 'common-gateway/pet-store-bundle']);
 
         // Do some cleanup to uninstall correctly...
 

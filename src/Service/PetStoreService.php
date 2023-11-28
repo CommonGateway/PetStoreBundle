@@ -69,7 +69,7 @@ class PetStoreService
         $this->data          = $data;
         $this->configuration = $configuration;
 
-        $this->logger->debug("PetStoreService -> petStoreHandler()");
+        $this->logger->debug("PetStoreService -> petStoreHandler()", ['plugin' => 'common-gateway/pet-store-bundle']);
 
         return ['response' => 'Hello. Your PetStoreBundle works'];
 
