@@ -1,11 +1,24 @@
 name: My Product Page Workflow
 
 on:
-  push
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Create or Update publiccode.yaml
-        uses: OpenCatalogi/publiccode-action@0.0.1-main.53.17ba9e3       
+        uses: OpenCatalogi/publiccode-action@latest
+      - name: Create een Productpagina
+        uses: OpenCatalogi/productpage-action@latest
+        with:
+          nl_design_theme_classname: "open-webconcept-theme"
+          pull_from_branche: 'development'
+          start_page: 'https://github.com/CommonGateway/PetStoreBundle/blob/main/README.md'
+          jumbotron_image_placement: "right"
+          jumbotron_image_url: "https://raw.githubusercontent.com/CommonGateway/PetStoreBundle/main/docs/PetStoreLogo.svg"
