@@ -1,52 +1,98 @@
-categories:
-- collaboration
-- it-development
+publiccodeYmlVersion: '0.1'
+name: PetstoreBundle
+applicationSuite: null
+url: https://github.com/CommonGateway/PetstoreBundle
+landingURL: https://commongateway.github.io/PetStoreBundle
+isBasedOn: null
+softwareVersion: null
+logo: https://avatars.githubusercontent.com/u/106860777?v=4
+monochromeLogo: null
+platforms:
+  - web
+releaseDate: '2022-10-01'
+categories: 
+  - collaboration
+  - it-development
+developmentStatus: beta
+softwareType: softwareAddon
 description:
   en:
-    apiDocumentation: ''
-    awards: []
-    documentation: ''
-    features: []
-    genericName: An example repository for creating Symfony flex bundles as Gateway
-      plugins
-    localisedName: ''
-    longDescription: ''
-    screenshots: []
+    localisedName: null
+    genericName: null
     shortDescription: A symfony bundle as example.
+    longDescription: "An example repository for creating Symfony flex bundles as Gateway plugins."
+    documentation: https://commongateway.github.io/PetStoreBundle
+    apiDocumentation: null
+    features: []
+    screenshots: []
     videos: []
+    awards: []
   nl:
+    localisedName: null
+    genericName: null
     shortDescription: Een symfony bundel als voorbeeld.
-developmentStatus: beta
-landingURL: ''
-legal:
-  authorsFile: ''
-  license: other
-  mainCopyrightOwner: ''
-  repoOwner: ''
+    longDescription: "Een voorbeeldrepository voor het maken van Symfony flex-bundels als Gateway-plug-ins."
+    documentation: https://commongateway.github.io/PetStoreBundle
+    apiDocumentation: null
+    features: []
+    screenshots: []
+    videos: []
+    awards: []
+intendedaudience: 
+  countries: 
+    - nl
+  unsupportedCountries: []
+  scope: 
+    - government
+    - local-authorities
+legal: 
+  license: EUPL-1.2-or-later
+  mainCopyrightOwner: legal/authorsFile
+  repoOwner: CommonGateway
+  authorsFile: null
+maintenance: 
+  type: internal
+  contractors: 
+    - name: Conduction
+      until: 2035-01-01
+      email: info\x64conduction.nl
+      website: https://www.conduction.nl
+  contacts:
+    - name: Ruben van der Linde
+      email: info\x64conduction.nl
+      phone: 085 303 6840
+      affiliation: Conduction
 localisation:
-  availableLanguages:
-  - en
-  localisationReady: false
-maintenance:
-  contacts: []
-  contractors: []
-  type: none
-name: PetStoreBundle
-nl:
-  vng:
-    commonground: []
-    gemma: []
-organisation:
-  description: The common gateway
-  logo: https://avatars.githubusercontent.com/u/106860777?v=4
-  name: CommonGateway
-  url: CommonGateway
-platforms:
-- web
-publiccodeYmlVersion: '0.1'
-releaseDate: '2022-10-01'
-roadmap: ''
-softwareType: addon
-softwareVersion: ''
-url: https://github.com/CommonGateway/PetStoreBundle
-usedBy: []
+  localisationReady: true
+  availableLanguages: 
+     - en
+     - nl
+dependsOn: 
+  open: 
+    - name: CommonGateway
+      versionMin: 1.2
+      versionMax: 1.3
+      version: 1.2.47
+      optional: false
+    - name: CoreBundle
+      versionMin: 1.2
+      versionMax: 1.3
+      version: 1.2.47
+      optional: false
+roadmap: null
+inputTypes: null
+outputTypes: null
+nl: 
+  countryExtensionVersion: null
+  commonground: 
+    intendedOrganisations: []
+    installationType: null
+    layerType: data
+  gemma:
+    bedrijfsfuncties: []
+    bedrijfsservices: []
+    applicatiefunctie: null
+    model: null
+  upl: []
+downloadUrls:
+  - https://github.com/CommonGateway/PetstoreBundle/archive/refs/heads/main.zip
