@@ -50,7 +50,7 @@ class InstallationService implements InstallerInterface
 
 
     /**
-     * Every installation service should implement an install function
+     * Every installation service should implement an installation function
      *
      * @return void
      */
@@ -78,7 +78,7 @@ class InstallationService implements InstallerInterface
 
 
     /**
-     * Every installation service should implement an uninstall function
+     * Every installation service should implement an uninstallation function
      *
      * @return void
      */
