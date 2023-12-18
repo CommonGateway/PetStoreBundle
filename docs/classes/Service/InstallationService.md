@@ -13,8 +13,8 @@ CommonGateway\CoreBundle\Installer\InstallerInterface
 |------|-------------|
 |[__construct](#installationservice__construct)|The constructor|
 |[checkDataConsistency](#installationservicecheckdataconsistency)|The actual code run on update and installation of this bundle|
-|[install](#installationserviceinstall)|Every installation service should implement an install function|
-|[uninstall](#installationserviceuninstall)|Every installation service should implement an uninstall function|
+|[install](#installationserviceinstall)|Every installation service should implement an installation function|
+|[uninstall](#installationserviceuninstall)|Every installation service should implement an uninstallation function|
 |[update](#installationserviceupdate)|Every installation service should implement an update function|
 
 
@@ -81,7 +81,7 @@ The actual code run on update and installation of this bundle
 public install (void)
 ```
 
-Every installation service should implement an install function 
+Every installation service should implement an installation function 
 
  
 
@@ -107,7 +107,7 @@ Every installation service should implement an install function
 public uninstall (void)
 ```
 
-Every installation service should implement an uninstall function 
+Every installation service should implement an uninstallation function 
 
  
 
