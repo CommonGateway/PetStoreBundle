@@ -40,11 +40,11 @@ This section is for developers who want to build plugins to extend Common Gatewa
 
 The following knowledge is assumed and/or installed:
 
-- [Composer](https://getcomposer.org/download/)
-- [Packagist](https://packagist.org/)
-- [Docker](https://www.docker.com/products/docker-desktop/)
-- [Schema.json](https://json-schema.org/)
-- Basic knowledge of the [Common Gateway](https://github.com/ConductionNL/commonground-gateway) & [Core Bundle](https://github.com/CommonGateway/coreBundle)
+* [Composer](https://getcomposer.org/download/)
+* [Packagist](https://packagist.org/)
+* [Docker](https://www.docker.com/products/docker-desktop/)
+* [Schema.json](https://json-schema.org/)
+* Basic knowledge of the [Common Gateway](https://github.com/ConductionNL/commonground-gateway) & [Core Bundle](https://github.com/CommonGateway/coreBundle)
 
 ### Using this template
 
