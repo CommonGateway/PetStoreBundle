@@ -40,11 +40,11 @@ This section is for developers who want to build plugins to extend Common Gatewa
 
 The following knowledge is assumed and/or installed:
 
-[Composer](https://getcomposer.org/download/)
-[Packagist](https://packagist.org/)
-[Docker](https://www.docker.com/products/docker-desktop/)
-[Schema.json](https://json-schema.org/)
-Basic knowledge of the [Common Gateway](https://github.com/CommonGateway)
+- [Composer](https://getcomposer.org/download/)
+- [Packagist](https://packagist.org/)
+- [Docker](https://www.docker.com/products/docker-desktop/)
+- [Schema.json](https://json-schema.org/)
+- Basic knowledge of the [Common Gateway](https://github.com/ConductionNL/commonground-gateway) & [Core Bundle](https://github.com/CommonGateway/coreBundle)
 
 ### Using this template
 
@@ -68,9 +68,9 @@ This template is for rapid Symfony bundle development and meant as a model to ba
 
 ### Adding schemas
 
-You can load [json schemas](https://json-schema.org/learn/getting-started-step-by-step.html#starting-the-schema) as Entities from your [`/Schema`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Schema) folder to use in the Common Gateway and work with objects based on your schemas.
+You can load [json schemas](https://json-schema.org/learn/getting-started-step-by-step.html#starting-the-schema) as Entities from your [`/Schema`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Installation/Schema) folder to use in the Common Gateway and work with objects based on your schemas.
 
-You can add existing schemas or create your own and add them to the`/Schema` folder. There is an example shown here in [`/Schema/example.json`](https://github.com/CommonGateway/PetStoreBundle/blob/main/Schema/example.json).
+You can add existing schemas or create your own and add them to the`/Schema` folder. There is an example shown here in [`/Schema/example.json`](https://github.com/CommonGateway/PetStoreBundle/blob/main/Installation/Schema/example.json).
 
 The following properties are required, and without them, the Gateway won't recognize the schema as valid:
 
@@ -92,4 +92,4 @@ The following properties are required, and without them, the Gateway won't recog
 - `properties` must be schema properties
 ```
 
-Once you add schemas to the repository, you can also add objects/data for those schemas. There is an example shown in the [`/Data`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Data) folder.
+Once you add schemas to the repository, you can also add objects/data for those schemas. There is an example shown in the [`/Installation/Data`](https://github.com/CommonGateway/PetStoreBundle/tree/main/Installation/Data) folder.
