@@ -18,8 +18,8 @@ softwareType: softwareAddon
 description:
   en:
     localisedName: null
-    genericName: PetstoreBundle
-    shortDescription: A symfony bundle as example.
+    genericName: null
+    shortDescription: "A symfony bundle as example."
     longDescription: "An example repository for creating Symfony flex bundles as Gateway plugins."
     documentation: https://commongateway.github.io/PetStoreBundle
     apiDocumentation: null
@@ -29,8 +29,8 @@ description:
     awards: []
   nl:
     localisedName: null
-    genericName: PetstoreBundle
-    shortDescription: Een symfony bundel als voorbeeld.
+    genericName: null
+    shortDescription: "Een symfony bundel als voorbeeld."
     longDescription: "Een voorbeeldrepository voor het maken van Symfony flex-bundels als Gateway-plug-ins."
     documentation: https://commongateway.github.io/PetStoreBundle
     apiDocumentation: null
