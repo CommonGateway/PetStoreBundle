@@ -1,4 +1,4 @@
-name: My Open Catalogi Workflow
+name: My ProductPage & PublicCode Workflow
 
 on:
   push:
