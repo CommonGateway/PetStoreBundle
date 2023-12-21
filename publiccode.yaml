@@ -23,7 +23,8 @@ description:
     longDescription: "An example repository for creating Symfony flex bundles as Gateway plugins."
     documentation: https://commongateway.github.io/PetStoreBundle
     apiDocumentation: null
-    features: []
+    features:
+      - Common Ground Gateway Plugin
     screenshots: []
     videos: []
     awards: []
@@ -34,7 +35,8 @@ description:
     longDescription: "Een voorbeeldrepository voor het maken van Symfony flex-bundels als Gateway-plug-ins."
     documentation: https://commongateway.github.io/PetStoreBundle
     apiDocumentation: null
-    features: []
+    features:
+      - Common Ground Gateway Plugin
     screenshots: []
     videos: []
     awards: []
