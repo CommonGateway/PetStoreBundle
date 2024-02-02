@@ -26,7 +26,7 @@ jobs:
           footer_logo_href: https://conduction.nl
           footer_content: "https://raw.githubusercontent.com/CommonGateway/PetStoreBundle/main/docs/footerContent.json"
           footer_content_header: "heading-3"
-          jumbotron_title: "Product Website PetStoreBundle"
+          jumbotron_title: "PetStoreBundle"
           jumbotron_subtitle: "Product page"
           jumbotron_description: "An example repository for creating Symfony flex bundles as Gateway plugins."
           jumbotron_image: "https://raw.githubusercontent.com/CommonGateway/PetStoreBundle/main/docs/PetStoreBundleLogo.svg"
