@@ -1,0 +1,69 @@
+[
+  {
+    "label": "Home",
+    "type": "internal",
+    "current": {
+      "pathname": "/"
+    },
+    "handleClick": {
+      "link": "/"
+    }
+  },
+  {
+    "label": "Redocly",
+    "type": "external",
+    "current": {
+      "pathname": "/Redocly"
+    },
+    "handleClick": {
+      "link": "https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStoreBundle/main/docs/openapi.json&nocors"
+    }
+  },
+  {
+    "label": "Services",
+    "current": {
+      "pathname": "/Service"
+    },
+    "subItems": [
+      {
+        "label": "README",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Service/README"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Service",
+            "fileName": "README"
+          }
+        }
+      },
+      {
+        "label": "InstallationService",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Service/InstallationService"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Service",
+            "fileName": "InstallationService"
+          }
+        }
+      },
+      {
+        "label": "PetStoreService",
+        "type": "internalMarkdown",
+        "current": {
+          "pathname": "/Service/PetStoreService"
+        },
+        "handleClick": {
+          "internalMarkdown": {
+            "directoryName": "Service",
+            "fileName": "PetStoreService"
+          }
+        }
+      }
+    ]
+  }
+]

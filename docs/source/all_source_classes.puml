@@ -1,0 +1,6 @@
+@startuml
+title: All sources
+footer: Common Gateway Plugin | Commongateway | Petstorebundle 
+header: Source
+
+@enduml

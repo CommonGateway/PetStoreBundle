@@ -1,0 +1,440 @@
+# Generates documentation for the schema's
+
+name: Generate PlantUML and SVG files from JSON Schema
+
+on:
+  push: # Trigger on any push
+
+jobs:
+  generate-puml:
+    runs-on: ubuntu-latest
+    name: Generate PUML and markdown files
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install PlantUML
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y plantuml
+
+      - name: Create docs/action directory if it doesn't exist
+        run: |
+          mkdir -p docs/action
+
+      - name: Create docs/collection directory if it doesn't exist
+        run: |
+          mkdir -p docs/collection
+
+      - name: Create docs/cronjob directory if it doesn't exist
+        run: |
+          mkdir -p docs/cronjob
+
+      - name: Create docs/mapping directory if it doesn't exist
+        run: |
+          mkdir -p docs/mapping
+
+      - name: Create docs/schema directory if it doesn't exist
+        run: |
+          mkdir -p docs/schema
+
+      - name: Create docs/security directory if it doesn't exist
+        run: |
+          mkdir -p docs/security
+
+      - name: Create docs/source directory if it doesn't exist
+        run: |
+          mkdir -p docs/source
+
+      - name: Find JSON files and Generate PUMl
+        run: |
+          # Embedded Python script to generate .puml files from JSON Schema
+          python << 'EOF'
+          import json
+          import os
+          
+          repo_url = f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/blob/{os.environ['GITHUB_REF'].split('/')[-1]}"
+          
+          repo_name = os.environ['GITHUB_REPOSITORY'].split('/')[-1]
+          repo_owner = os.environ['GITHUB_REPOSITORY'].split('/')[0]
+          
+          # Replace underscores and hyphens with spaces
+          repo_name = repo_name.replace('_', ' ').replace('-', ' ')
+          repo_owner = repo_owner.replace('_', ' ').replace('-', ' ')
+          
+          # Capitalize each word
+          repo_name = repo_name.title()
+          repo_owner = repo_owner.title()
+          
+          all_action_classes = []
+          all_collection_classes = []
+          all_cronjob_classes = []
+          all_mapping_classes = []
+          all_schema_classes = []
+          all_security_classes = []
+          all_source_classes = []
+          
+          def generate_schema_puml(schema, puml_file_path):
+              title = schema.get('title', 'Untitled').replace(" ", "")  # Remove spaces from title
+              class_def = [f"class {title} {{"]
+              properties = schema.get('properties', {})
+              for prop, details in properties.items():
+                  class_def.append(f"  + {prop}: {details.get('type', 'Any')}")
+              class_def.append("}")
+              all_schema_classes.append("\n".join(class_def))
+          
+              with open(puml_file_path, 'w') as puml_file:
+                  puml_file.write("@startuml\n")
+                  puml_file.write(f"title: {title}\n")
+                  puml_file.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+                  puml_file.write("header: Schema\n\n")           
+          
+                  puml_file.write("\n".join(class_def))
+                  puml_file.write("\n@enduml\n")
+          
+          for root, dirs, files in os.walk("."):
+              for file in files:
+                  if file.endswith("schema.json"):
+                      schema_file_path = os.path.join(root, file)
+                      with open(schema_file_path, 'r') as f:
+                          schema = json.load(f)
+                      puml_file_name = os.path.basename(schema_file_path).replace("schema.json", "puml")
+                      puml_file_path = os.path.join("docs/schema", puml_file_name)
+                      generate_schema_puml(schema, puml_file_path)
+          
+          # Generate an additional .puml file that includes all classes
+          
+          with open("docs/action/all_action_classes.puml", 'w') as f:
+              f.write("@startuml\n")
+              f.write("title: All actions\n")
+              f.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+              f.write("header: Action\n")  
+              f.write("\n".join(all_action_classes))
+              f.write("\n@enduml\n")
+          
+          with open("docs/collection/all_collection_classes.puml", 'w') as f:
+              f.write("@startuml\n")
+              f.write("title: All collections\n")
+              f.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+              f.write("header: Collection\n")  
+              f.write("\n".join(all_collection_classes))
+              f.write("\n@enduml\n")
+          
+          with open("docs/cronjob/all_cronjob_classes.puml", 'w') as f:
+              f.write("@startuml\n")
+              f.write("title: All cronjobs\n")
+              f.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+              f.write("header: Cronjob\n")  
+              f.write("\n".join(all_cronjob_classes))
+              f.write("\n@enduml\n")
+          
+          with open("docs/mapping/all_mapping_classes.puml", 'w') as f:
+              f.write("@startuml\n")
+              f.write("title: All mappings\n")
+              f.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+              f.write("header: Mapping\n")  
+              f.write("\n".join(all_mapping_classes))
+              f.write("\n@enduml\n")          
+          
+          with open("docs/schema/all_schema_classes.puml", 'w') as f:
+              f.write("@startuml\n")
+              f.write("title: All schemas\n")
+              f.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+              f.write("header: Schema\n")  
+              f.write("\n".join(all_schema_classes))
+              f.write("\n@enduml\n")
+          
+          with open("docs/security/all_security_classes.puml", 'w') as f:
+              f.write("@startuml\n")
+              f.write("title: All security groups")
+              f.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+              f.write("header: Security\n")  
+              f.write("\n".join(all_security_classes))
+              f.write("\n@enduml\n")
+          
+          with open("docs/source/all_source_classes.puml", 'w') as f:
+              f.write("@startuml\n")
+              f.write("title: All sources\n")
+              f.write(f"footer: Common Gateway Plugin | {repo_owner} | {repo_name} \n")
+              f.write("header: Source\n")  
+              f.write("\n".join(all_source_classes))
+              f.write("\n@enduml\n")
+          EOF
+
+      # Let create the mardown documents
+      - name: Find JSON files and Generate Markdown
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF: ${{ github.ref }}
+        run: |
+          # Embedded Python script to generate .md files from JSON Schema
+          python << 'EOF'
+          import json
+          import os
+
+          repo_url = f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/blob/{os.environ['GITHUB_REF'].split('/')[-1]}"
+          
+          repo_name = os.environ['GITHUB_REPOSITORY'].split('/')[-1]
+          repo_owner = os.environ['GITHUB_REPOSITORY'].split('/')[0]
+          
+          # Replace underscores and hyphens with spaces
+          repo_name = repo_name.replace('_', ' ').replace('-', ' ')
+          repo_owner = repo_owner.replace('_', ' ').replace('-', ' ')
+          
+          # Capitalize each word
+          repo_name = repo_name.title()
+          repo_owner = repo_owner.title()
+
+          all_action_classes = []
+          all_collection_classes = []
+          all_cronjob_classes = []
+          all_mapping_classes = []
+          all_schema_classes = []
+          all_security_classes = []
+          all_source_classes = []
+
+          def generate_markdown(schema, md_file_path, svg_file_name):
+           with open(md_file_path, 'w') as md_file:
+               title = schema.get('title', 'Untitled')
+               md_file.write(f"# {title}\n\n")
+               md_file.write(f"{schema.get('description', 'No description available.')}\n\n")
+               absolute_svg_url = f"{repo_url}/docs/schema/{svg_file_name}"
+               md_file.write(f"![Class Diagram]({absolute_svg_url})\n\n")
+               md_file.write("## Properties\n\n")
+               md_file.write("| Property | Type | Description | Required |\n")
+               md_file.write("|----------|------|-------------|----------|\n")
+               required_fields = schema.get('required', [])
+               properties = schema.get('properties', {})
+               for prop, details in properties.items():
+                   is_required = "Yes" if prop in required_fields else "No"
+                   md_file.write(f"| {prop} | {details.get('type', 'Any')} | {details.get('description', 'N/A')} | {is_required} |\n")
+               all_schema_classes.append((title, md_file_path))
+
+          for root, dirs, files in os.walk("."):
+           for file in files:
+               if file.endswith("schema.json"):
+                   schema_file_path = os.path.join(root, file)
+                   with open(schema_file_path, 'r') as f:
+                       schema = json.load(f)
+                   base_name = os.path.basename(schema_file_path).replace(".schema.json", "")
+                   md_file_name = base_name + ".md"
+                   svg_file_name = base_name + ".svg"
+                   md_file_path = os.path.join("docs/schema", md_file_name)
+                   generate_markdown(schema, md_file_path, svg_file_name)
+
+          # Generate a generic README.md in docs/action
+          with open("docs/action/README.md", 'w') as f:
+           f.write("# Action Documentation\n\n")
+           f.write("## Table of Actions\n\n")
+           f.write("| Action | Documentation |\n")
+           f.write("|-------|--------------|\n")
+           for title, md_file_path in all_action_classes:
+               md_file_name = os.path.basename(md_file_path)
+               f.write(f"| {title} | [{md_file_name}]({md_file_name}) |\n")
+
+          # Generate a generic README.md in docs/collection
+          with open("docs/collection/README.md", 'w') as f:
+           f.write("# Collection Documentation\n\n")
+           f.write("## Table of collections\n\n")
+           f.write("| Collection | Documentation |\n")
+           f.write("|-------|--------------|\n")
+           for title, md_file_path in all_collection_classes:
+               md_file_name = os.path.basename(md_file_path)
+               f.write(f"| {title} | [{md_file_name}]({md_file_name}) |\n")          
+
+          # Generate a generic README.md in docs/cronjob
+          with open("docs/cronjob/README.md", 'w') as f:
+           f.write("# cronjob Documentation\n\n")
+           f.write("## Table of Cronjobs\n\n")
+           f.write("| cronjob | Documentation |\n")
+           f.write("|-------|--------------|\n")
+           for title, md_file_path in all_cronjob_classes:
+               md_file_name = os.path.basename(md_file_path)
+               f.write(f"| {title} | [{md_file_name}]({md_file_name}) |\n")          
+
+          # Generate a generic README.md in docs/mapping
+          with open("docs/mapping/README.md", 'w') as f:
+           f.write("#Mapping Documentation\n\n")
+           f.write("## Table of mappings\n\n")
+           f.write("| Mapping | Documentation |\n")
+           f.write("|-------|--------------|\n")
+           for title, md_file_path in all_mapping_classes:
+               md_file_name = os.path.basename(md_file_path)
+               f.write(f"| {title} | [{md_file_name}]({md_file_name}) |\n")          
+
+          # Generate a generic README.md in docs/schema
+          with open("docs/schema/README.md", 'w') as f:
+           f.write("# Schema Documentation\n\n")
+           f.write("## Table of Classes\n\n")
+           f.write("| Class | Documentation |\n")
+           f.write("|-------|--------------|\n")
+           for title, md_file_path in all_schema_classes:
+               md_file_name = os.path.basename(md_file_path)
+               f.write(f"| {title} | [{md_file_name}]({md_file_name}) |\n")
+
+          # Generate a generic README.md in docs/security
+          with open("docs/security/README.md", 'w') as f:
+           f.write("# Security Documentation\n\n")
+           f.write("## Table of Security Groups\n\n")
+           f.write("| Security | Documentation |\n")
+           f.write("|-------|--------------|\n")
+           for title, md_file_path in all_security_classes:
+               md_file_name = os.path.basename(md_file_path)
+               f.write(f"| {title} | [{md_file_name}]({md_file_name}) |\n")
+
+          # Generate a generic README.md in docs/source
+          with open("docs/source/README.md", 'w') as f:
+           f.write("#Source Documentation\n\n")
+           f.write("## Table of Sources\n\n")
+           f.write("| Class | Documentation |\n")
+           f.write("|-------|--------------|\n")
+           for title, md_file_path in all_source_classes:
+               md_file_name = os.path.basename(md_file_path)
+               f.write(f"| {title} | [{md_file_name}]({md_file_name}) |\n")         
+
+          EOF
+
+      # Commit and push changes
+      - name: Commit and Push Generated Files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull
+          git add .
+          git commit -m "Add generated puml,svg,md and README files based on plugin installation files" || echo "No changes to commit"
+          git push
+
+  # Generate puml files
+  generate-plantuml:
+    runs-on: ubuntu-latest
+    name: Generate plant UML files
+    needs: generate-puml
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: plantuml
+        id: plantuml
+        uses: grassedge/generate-plantuml-action@v1.5
+        with:
+          message: "Render PlantUML files"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # clean up the php code
+  php-cbf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: cs2pr, phpcbf
+
+      - name: Run phpcbf
+        run: phpcbf .
+        continue-on-error: true
+      - name: Git commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email ""
+          git add src
+          git commit -m "Update src from PHP Codesniffer" || echo "No changes to commit"
+          git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase --autostash
+          git push
+
+  generate-php-documentation:
+    name: Genereate php documentation
+    runs-on: ubuntu-latest
+    needs: [php-cbf]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: php-actions/composer@v6
+        with:
+          php_version: "7.4"
+          php_extensions: redis exif mongodb intl pdo_pgsql zip mysqli pdo_mysql pcntl gd gmp
+          version: 2.x
+          command: require clean/phpdoc-md
+      - name: Build the docs
+        run: vendor/bin/phpdoc-md
+      - name: Git commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email ""
+          git add docs/classes
+          git commit -m "Update phpdoc" || echo "No changes to commit"
+          git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase --autostash
+          git push
+
+  # clean up the markdowncode
+  remark-lint:
+    name: runner / remark-lint
+    runs-on: ubuntu-latest
+    needs: [generate-php-documentation,generate-puml]
+    steps:
+      - uses: actions/checkout@v2
+      - name: install remark presets
+        run: npm install remark-cli remark-preset-lint-consistent remark-preset-lint-recommended remark-lint-list-item-indent
+        shell: bash
+      - name: run remark
+        run: npx remark . --output --use remark-preset-lint-consistent --use remark-preset-lint-recommended --use remark-lint-list-item-indent
+      - name: Git commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email ""
+          git add .
+          git reset package.json
+          git reset package-lock.json
+          git reset node_modules
+          git commit -m "Update src from remark-lint" || echo "No changes to commit"
+          git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase --autostash
+          git push
+
+  # Create a pdf from the documentation
+  convert-to-pdf:
+    name: Build PDF
+    runs-on: ubuntu-latest
+    needs: [remark-lint,generate-plantuml]
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build book
+        run: |-
+          npm install -g md-to-pdf
+          echo; echo "Adding root to PDF"
+          for f in *.md; do cat $f; echo; done | md-to-pdf > docs/manual.pdf
+          cd docs
+          echo; echo "Input Folder docs"
+          ls
+          echo; echo "Adding docs to PDF"
+          for f in *.md; do cat $f; echo; done | md-to-pdf > manual.pdf
+          cd features
+          echo; echo "Input Folder docs/features"
+          ls
+          echo; echo "Adding features to PDF"
+          for f in *.md; do cat $f; echo; done | md-to-pdf > ../manual.pdf
+          cd ../
+          echo; echo "Output DOCS Folder Listing"
+          ls
+          cd ..
+      - name: Git commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email ""
+          git add .
+          git reset package.json
+          git reset package-lock.json
+          git reset node_modules
+          git commit -m "Update src from remark-lint" || echo "No changes to commit"
+          git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase --autostash
+          git push

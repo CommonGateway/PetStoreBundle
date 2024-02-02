@@ -1,0 +1,6 @@
+@startuml
+title: All collections
+footer: Common Gateway Plugin | Commongateway | Petstorebundle 
+header: Collection
+
+@enduml
