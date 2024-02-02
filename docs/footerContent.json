@@ -1,0 +1,76 @@
+[
+  {
+    "title": "Links",
+    "items": [
+      {
+        "ariaLabel": "Home",
+        "value": "Home",
+        "link": "/",
+        "icon": { "prefix": "fas", "icon": "home", "placement": "left" }
+      },
+      {
+        "ariaLabel": "Redocly",
+        "value": "Redocly",
+        "link": "https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStoreBundle/main/docs/openapi.json&nocors",
+        "icon": { "prefix": "fab", "icon": "redocly", "placement": "left" }
+      },
+      {
+        "ariaLabel": "Github",
+        "value": "Github",
+        "link": "https://github.com/commonGateway/petStoreBundle",
+        "icon": { "prefix": "fab", "icon": "github", "placement": "left" }
+      }
+    ]
+  },
+  {
+    "title": "Services",
+    "items": [
+      {
+        "ariaLabel": "Readme",
+        "value": "Readme",
+        "internalMarkdown": {
+          "directoryName": "Service",
+          "fileName": "README"
+        }
+      },
+      {
+        "ariaLabel": "InstallationService",
+        "value": "InstallationService",
+        "internalMarkdown": {
+          "directoryName": "Service",
+          "fileName": "InstallationService"
+        }
+      },
+      {
+        "ariaLabel": "PetStoreService",
+        "value": "PetStoreService",
+        "internalMarkdown": {
+          "directoryName": "Service",
+          "fileName": "PetStoreService"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Contact",
+    "items": [
+      {
+        "ariaLabel": "Phone number",
+        "value": "+31 (0)85 3036840",
+        "link": "tel:+31 (0)85 3036840",
+        "icon": { "prefix": "fas", "icon": "phone", "placement": "left" }
+      },
+      {
+        "ariaLabel": "Email address",
+        "value": "info@conduction.nl",
+        "link": "mailto:info@conduction.nl",
+        "icon": { "prefix": "fas", "icon": "envelope", "placement": "left" }
+      },
+      {
+        "label": "Address",
+        "ariaLabel": "Address",
+        "value": "Lauriergracht 14h"
+      }
+    ]
+  }
+]
