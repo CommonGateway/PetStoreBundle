@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Create a Product page
+      - name: Deploy Product Github Page
         uses: OpenCatalogi/productpage-action@latest
         with:
           github_repository_name_as_prefix: true
